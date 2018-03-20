@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ko" class="player-on">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <title>slide</title>
+
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- google material icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/style.css?v=css_Ver2">
+
+    <script src="../assets/js/lib/jquery-1.12.2.min.js" type="text/javascript"></script>
+    <script src="../assets/js/lib/jquery.dotdotdot.js"></script>
+    <script src="../assets/js/lib/slick.js"></script>
+    <script src="../assets/js/lib/jquery.easing.1.3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mb.YTPlayer/3.1.13/jquery.mb.YTPlayer.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="wrap" class="paging-fadeout">
+    <aside class="handler">
+        <h1><a href="https://github.com/pupunzi/jquery.mb.YTPlayer" target="_blank">mb.YTPlayer</a></h1>
+        <h2>methods</h2>
+        <ul>
+            <li>
+                <button onclick="$('#player').YTPChangeMovie({videoURL:'https://www.youtube.com/watch?v=_KVj00ygexw', ratio: '4/3',  mute:false})"> change video </button>
+            </li>
+            <li>
+                <button onclick="$('#player').YTPPlay()">play</button>
+            </li>
+            <li>
+                <button onclick="$('#player').YTPPause()">pause</button>
+            </li>
+            <li>
+                <button onclick="$('#player').YTPStop()">stop</button>
+            </li>
+            <li>
+                <button onclick="$('#player').YTPMute()">mute</button>
+            </li>
+            <li>
+                <button onclick="$('#player').YTPUnmute()">unmute</button>
+            </li>
+            <li>
+                <button onclick="console.log($('#player').YTPGetPlayer())">get state</button>
+            </li>
+            <li>
+                <button onclick="$('#player').YTPPlayNext()">play next</button>
+            </li>
+            <li>
+                <button onclick="$('#player').YTPPlayPrev()">play previous</button>
+            </li>
+            <li>
+                <button onclick="$('#player').YTPPlayIndex(1)">play the index(1) video in the list</button>
+            </li>
+            <li>
+                <button onclick="$('#player').YTPPlayIndex(2)">play the index(2) video in the list</button>
+            </li>
+            <li>
+                <button onclick="$('#player').YTPPlayIndex(3)">play the index(3) video in the list</button>
+            </li>
+        </ul>
+        <h2>Filters</h2>
+        <ul>
+            <li>
+                <button onclick="$('#player').YTPApplyFilter('blur', 5)">apply blur:5 effect</button>
+            </li>
+            <li>
+                <button onclick="$('#player').YTPRemoveFilter('blur')">remove blur effect</button>
+            </li>
+        </ul>
+        <div class="filter-options">
+            <h3>other filter options</h3>
+            <p>
+                grayscale : 1-100 <br>
+                hue_rotate: 1-360 <br>
+                invert : 1-100 <br>
+                opacity : 1-100 <br>
+                saturate : 1-400 <br>
+                sepia : 1-100 <br>
+                brightness: 1-400 <br>
+                contrast : 1-400 <br>
+                blur : 1-100
+            </p>
+        </div>
+        <h2>Mask</h2>
+        <ul>
+            <li>
+                <button onclick="$('#player').YTPAddMask('https://steps.org.za//wp-content/uploads/2015/09/youtube_youtube_icon_white_icon.png')">Add Mask</button>
+            </li>
+            <li>
+                <button onclick="$('#player').YTPRemoveMask()">Remove  Mask</button>
+            </li>
+            <!--
+            option 에서 mask 를 주고 시작한다면 토글로 컨트롤 가능.
+            <li>
+                <button onclick="$('#player').YTPToggleMask()">Toggle Mask</button>
+            </li>
+            -->
+        </ul>
+    </aside>
+    <div class="yt-visual">
+        <div id="player" class="player"></div>
+        <div class="next-section">
+            <i class="material-icons">play_for_work</i>
+        </div>
+    </div>
+
+    <div id="main">
+        <section class="about">
+            <h2 class="section-title">about section</h2>
+        </section>
+        <section class="service">
+            <h2 class="section-title">service section</h2>
+        </section>
+        <section class="contact">
+            <h2 class="section-title">contact section</h2>
+        </section>
+    </div>
+
+</div>
+
+<script>
+    var videos = [
+        {videoURL:"https://www.youtube.com/watch?v=PtWP0OH6INM",containment:'self', optimizeDisplay: false, showControls: false, ratio:'auto', autoPlay:true, mute:false, startAt:3,opacity:1},
+        {videoURL: "https://www.youtube.com/watch?v=bg1sT4ILG0w",containment:'self', optimizeDisplay: false, showControls: false, ratio:'auto', autoPlay:true, mute:false, startAt:0,opacity:1},
+        {videoURL: "https://www.youtube.com/watch?v=PIh2xe4jnpk",containment:'self', optimizeDisplay: false, showControls: false, ratio:'auto', autoPlay:true, mute:false, startAt:0,opacity:1}
+    ];
+    $('#player').YTPlaylist(videos, false)
+
+
+
+    $('.next-section').on('click', function () {
+        $('html, body').animate({scrollTop: 0});
+        $('html').removeClass('player-on');
+        $('#player').YTPPause();
+        $('.yt-visual').slideUp(600);
+    });
+    
+    $('.yt-visual').on('mousewheel DOMMouseScroll', function (e) {
+        var delta = e.originalEvent.wheelDelta;
+        if(delta < 0){
+            $('.next-section').trigger('click');
+        }
+    })
+
+    $('#main').on('mousewheel DOMMouseScroll', function (e) {
+        var delta = e.originalEvent.wheelDelta,
+            sct = $(window).scrollTop();
+
+        if(delta > 0 && sct == 0 ){
+            $('.yt-visual').slideDown(600);
+            $('html, body').animate({scrollTop: 0});
+            $('html').addClass('player-on');
+            $('#player').YTPPlay();
+        }
+    })
+
+
+
+</script>
+</body>
+</html>

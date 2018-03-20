@@ -1,0 +1,53 @@
+.drag-360img {
+
+  .drag-content {
+    position: relative;
+    z-index: 100;
+    width: 1000px;
+    margin: 50px auto;
+    .drag-line {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      right: 40px;
+      height: 10px;
+      background: #ff5252 + 60;
+      opacity: 0.5;
+    }
+    .drag-container {position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      .drag-start {
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: move;
+        width: 50px;
+        height: 50px;
+        background: #ff5252 + 60;
+        border-radius: 50%;
+      }
+    }
+    .drag-end {
+      position: absolute;
+      top: 5px;
+      right: 0;
+      width: 40px;
+      height: 40px;
+      border: 1px solid #08c;
+      border-radius: 50%;
+      opacity: 0.5;
+    }
+  }
+
+  .foot {
+    position: fixed;
+    z-index: 80;
+    top: 10px;
+    left: 50%;
+    margin-left: -240px;
+    background: url(https://yap.net/ko/static/images/main/img_tail.png) 0 0 no-repeat;
+  }
+
+}

@@ -1,0 +1,29 @@
+.custom-scroll {
+  h1 {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 500;
+    position: fixed;
+    left: 10%;
+    top: 100px;
+  }
+  .myScrollBar {
+    display: none;
+    position: fixed;
+    width: 10px;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    background: #ddd;
+    transform-origin:0 0;
+    overflow: hidden;
+    .scrollStick {
+      position: absolute;
+      top: 0;
+      left: -10px;
+      right: -10px;
+      background: #08c;
+      border-radius: 4px;
+    }
+  }
+}

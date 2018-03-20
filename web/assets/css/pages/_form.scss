@@ -1,0 +1,132 @@
+
+
+#wrap.form-component {
+  background: url(https://images.unsplash.com/photo-1473042904451-00171c69419d?auto=format&fit=crop&w=1675&q=80) 50% /cover no-repeat;
+  &:before {
+    content:'';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.member {
+  position: relative;
+  width: 1000px;
+  margin: 0 auto;
+  padding: 10vh 15px;
+  height: 100vh;
+}
+.base-content {
+  position: relative;
+  background: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  h2 {
+    font-size: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+  .btn-sign {
+    display: inline-block;
+    padding: 15px;
+    min-width: 200px;
+    color: #fff;
+    background: #00BCD4;
+    font-size: 15px;
+    text-transform: capitalize;
+    cursor: pointer;
+  }
+  .sign-up {
+    float: left;
+    width: 50%;
+    padding-top: 50px;
+    min-height: 80vh;
+  }
+  .sign-in {
+    float: right;
+    width: 50%;
+    padding-top: 50px;
+    min-height: 80vh;
+  }
+}
+.form-content {
+  position: absolute;
+  min-height: 80vh;
+  background: #fff;
+  width: 50%;
+  top: 10vh;
+  left: 0;
+  -webkit-transition: all .5s;
+  -ms-transition: all .5s;
+  transition: all .5s;
+  .state-in & {
+    left: 50%;
+  }
+  .state-up & {
+    left: 0;
+  }
+  .sign-form {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    text-align: center;
+    padding: 50px;
+    opacity: 1;
+    -webkit-transition: all .5s;
+    -ms-transition: all .5s;
+    transition: all .5s;
+    @include box_shadow(5);
+    h2 {
+      color: #333;
+      font-size: 30px;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+    }
+    input {
+      display: inline-block;
+      background: #fff;
+      border: 1px solid #eee;
+      padding: 8px;
+      width: 100%;
+    }
+    .action-sign {
+      margin-top: 40px;
+      display: inline-block;
+      padding: 15px;
+      min-width: 200px;
+      background: #00BCD4;
+      color: #fff;
+      font-size: 15px;
+      text-transform: capitalize;
+      cursor: pointer;
+    }
+  }
+  .sign-up {
+    .state-in & {
+      opacity: 0;
+    }
+    .state-up & {
+      z-index: 100;
+    }
+  }
+  .sign-in {
+    .state-up & {
+      opacity: 0;
+    }
+    .state-in & {
+      z-index: 100;
+    }
+  }
+}
+
+
+
+
+

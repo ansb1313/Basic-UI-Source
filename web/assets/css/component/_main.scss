@@ -1,0 +1,29 @@
+/**
+Main Page
+ */
+
+.page-init {
+  h1 {
+    font-size: 30px;
+    color: #333;
+    text-align: center;
+    padding: 40px 0;
+    span {
+      font-size: 20px;
+    }
+  }
+
+  .list {
+    a {
+      font-size: 20px;
+      color: #333;
+      padding: 10px 50px;
+      display: block;
+      text-transform: uppercase;
+      &:hover {
+        text-decoration: underline;
+        color: #08c + 40;
+      }
+    }
+  }
+}

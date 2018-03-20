@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <title>slide</title>
+
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- google material icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/style.css?v=css_Ver2">
+
+    <script src="../assets/js/lib/jquery-1.12.2.min.js" type="text/javascript"></script>
+    <script src="../assets/js/lib/jquery.dotdotdot.js"></script>
+    <script src="../assets/js/lib/slick.js"></script>
+    <script src="../assets/js/lib/jquery.easing.1.3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="wrap" class="paging-fadeout">
+    <div class="paging-gage"></div>
+
+    <div class="kool-slider2">
+        <div class="kool-list">
+            <div class="slide-track">
+                <div class="kool-slide is-current" data-kool-slide="1">
+                    <div class="image image1 init"></div>
+                    <div class="container">
+                        <div class="text">
+                            <h2 class="fadeInUp">Lorem ipsum dolor sit amet, consectetur</h2>
+                            <p class="fadeInUp">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit <br>
+                                Animi blanditiis consequuntur dolores
+                            </p>
+                            <div class="btn btn-detail fadeInUp">
+                                detail
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="kool-slide" data-kool-slide="2">
+                    <div class="image image2"></div>
+                    <div class="container">
+                        <div class="text">
+                            <h2 class="fadeInUp">Lorem ipsum dolor sit amet, consectetur</h2>
+                            <p class="fadeInUp">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit <br>
+                                Animi blanditiis consequuntur dolores
+                            </p>
+                            <div class="btn btn-detail fadeInUp">
+                                detail
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="kool-slide" data-kool-slide="3">
+                    <div class="image image3"></div>
+                    <div class="container">
+                        <div class="text">
+                            <h2 class="fadeInUp">Lorem ipsum dolor sit amet, consectetur</h2>
+                            <p class="fadeInUp">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit <br>
+                                Animi blanditiis consequuntur dolores
+                            </p>
+                            <div class="btn btn-detail fadeInUp">
+                                detail
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pager">
+            <div class="kool-prev kool-arrow" data-direction="prev">prev</div>
+            <div class="kool-next kool-arrow" data-direction="next">next</div>
+        </div>
+        <div class="dots">
+        </div>
+    </div>
+
+
+</div>
+
+<script>
+    var kool = {
+        init : function () {
+            kool.koolSlide();
+        },
+        koolSlide : function () {
+
+            // scenes
+            var koolSlider = $('.kool-slider2'),
+                koolList = koolSlider.find('.kool-list'),
+                koolTrack = koolSlider.find('.slide-track'),
+                koolSlide = koolList.find('.kool-slide'),
+                koolLength = koolSlide.length,
+
+                // pager
+                pager = $('.kool-prev, .kool-next'),
+
+                // currentPage
+                currentPage = 1;
+
+
+            // 기본 로직 실행
+            TweenMax.staggerTo('.kool-slider2 .is-current .fadeInUp', 0.6, {y:0, autoAlpha:1},0.1)
+            renderDots();
+            onClickDots();
+
+            // resize 혹은 반응형 사이즈 대응
+            $(window).on('load resize', function () {
+                setSize();
+            })
+
+
+            pager.on('click', _.throttle(function () {
+                var self = $(this),
+                    dataDirection = self.data('direction')
+
+                if(dataDirection === "prev"){
+                    if(currentPage > 1){
+                        currentPage--
+                        handlePage(currentPage)
+                    }
+                } else {
+                    if(currentPage < koolLength){
+                        currentPage++
+                        handlePage(currentPage)
+                    }
+                }
+            }, 500))
+
+
+            // set base slide size
+            function setSize() {
+                var windowWidth = $(window).width();
+                koolTrack.css({width: windowWidth * 3});
+                koolSlide.css({width: windowWidth});
+            }
+
+            // page 의 인덱스에 모든 디펜던시를 걸고 로직을짠다.
+            function handlePage(page){
+                currentPage = page;
+                $('.kool-slide').removeClass('is-current');
+                $('[data-kool-slide="' + currentPage  + '"]').addClass('is-current');
+                $('.dot-item').removeClass('is-active');
+                $('[data-dot-index="' + currentPage  + '"]').addClass('is-active');
+
+                var timeline = new TimelineMax();
+                timeline
+                    .staggerTo($(".kool-slide").not(".is-current").find('.fadeInUp'), 0.6, {y:40, autoAlpha:0},0.1)
+                    .to(koolList, 1,{x:  -(currentPage - 1) * 100 + "%"})
+                    .staggerTo($(".kool-slide.is-current").find('.fadeInUp'), 0.6, {y:0, autoAlpha:1}, 0.1)
+            }
+
+            // render dot button
+            function renderDots() {
+                for(var i = 0; i < koolLength; i++){
+                    $('.dots').append('<span class="dot-item" data-dot-index="' + ( i + 1 )  + '"></span>');
+                }
+                $('.dots .dot-item').first().addClass('is-active');
+            }
+
+            // handle dot button
+            function onClickDots() {
+                $('.dot-item').on('click', _.throttle(function () {
+                    var self = $(this),
+                        dataIndex = self.data('dotIndex');
+
+                    handlePage(dataIndex)
+                }, 500))
+            }
+        }
+    }
+
+    kool.init();
+</script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+.starbucksVisual {
+
+  header {
+    .top-header {
+      background: #f6f5ef;
+      height: 50px;
+      .member-area {
+        float: right;
+        a {
+          color: #555;
+          font-size: 14px;
+          font-weight: normal;
+          line-height: 50px;
+          padding: 16px;
+        }
+        span.bar {
+          color: #d1d5ad;
+          font-size: 13px;
+        }
+      }
+      .search-area i {
+        position: absolute;
+        top: 10px;
+        right: -30px;
+        border: 1px solid #999;
+        padding: 5px;
+        background: #fff;
+        border-radius: 20%;
+        font-size: 23px;
+      }
+    }
+    .main-header {
+      background: #f6f5ef;
+      height: 72px;
+      border-bottom: 1px solid #d6d6d6;
+      h1.logo {
+        position: absolute;
+        top: -25px;
+      }
+      .gnb {
+        float: right;
+        > ul {
+          float: left;
+        }
+        ul li.nav-item {
+          float: left;
+          a.nav-link {
+            font-size: 16px;
+            color: #555;
+            padding: 25px;
+            display: block;
+          }
+          &:hover a.nav-link {
+            color: #669900;
+            background: #2C2A29;
+          }
+          .dropdown {
+            position: absolute;
+            background: #2C2A29;
+            left: 0;
+            right: 0;
+            display: none;
+            z-index: 1000;
+          }
+          &:hover .dropdown {
+            display: block;
+          }
+          .dropdown > ul {
+            width: 1200px;
+            margin: 0 auto;
+            padding: 30px 0;
+            > li {
+              width: 20%;
+              float: left;
+              &:nth-child(5n+ 6) {
+                clear: both;
+                margin-top: 30px;
+              }
+              > {
+                a {
+                  color: #fff;
+                  font-size: 14px;
+                  padding: 5px 0;
+                  display: block;
+                }
+                ul li a {
+                  color: #999;
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+      }
+      position: relative;
+    }
+  }
+
+  .visual {
+    height: 646px;
+    position: relative;
+    overflow: hidden;
+    .container {
+      position: relative;
+      height: 100%;
+    }
+  }
+
+  /* 비쥬얼 상단 삼각형 배경 */
+
+  .visual-bg-1 {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 0;
+    width: 2954px;
+    margin-left: -2000px;
+    transition: all 0.8s;
+    background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/bg1.png) 0 0 no-repeat;
+  }
+
+  .ani .visual-bg-1 {
+    height: 646px;
+  }
+
+  .visual-bg-1 img {
+    position: absolute;
+    top: 0;
+  }
+
+  /* 비쥬얼 하단 삼각형 배경 */
+
+  .visual-bg-2 {
+    background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/bg2.png) 100% 100% no-repeat;
+    overflow: hidden;
+    position: absolute;
+    right: 50%;
+    bottom: 0;
+    height: 0;
+    width: 2954px;
+    margin-right: -2001px;
+    transition: all 0.8s;
+  }
+
+  .ani .visual-bg-2 {
+    height: 646px;
+  }
+
+  .visual-bg-2 img {
+    position: absolute;
+    bottom: 0;
+  }
+
+  /* 첫번째 음료 */
+
+  .beverage-1 {
+    position: absolute;
+    right: 90px;
+    bottom: 135px;
+    opacity: 0;
+    transition: all 1s;
+    transition-delay: 0.8s;
+  }
+
+  .ani .beverage-1 {
+    opacity: 1;
+  }
+
+  .beverage-1 {
+    .beverage_cup {
+      background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/bev1_cup.png) 0 0 no-repeat;
+      background-size: 100% auto;
+      width: 471px;
+      height: 455px;
+    }
+    .beverage_text {
+      background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/bev1_txt.png) 0 0 no-repeat;
+      background-size: 100% auto;
+      position: absolute;
+      top: 20px;
+      right: 65px;
+      width: 204px;
+      height: 65px;
+    }
+  }
+
+  /* 두번째 음료 */
+
+  .beverage-2 {
+    position: absolute;
+    right: -95px;
+    bottom: 30px;
+    opacity: 0;
+    transition: all 1s;
+    transition-delay: 1.5s;
+  }
+
+  .ani .beverage-2 {
+    opacity: 1;
+  }
+
+  .beverage-2 {
+    .beverage_cup {
+      background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/bev2_cup.png) 0 0 no-repeat;
+      background-size: 100% auto;
+      width: 471px;
+      height: 362px;
+    }
+    .beverage_text {
+      background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/bev2_txt.png) 0 0 no-repeat;
+      background-size: 100% auto;
+      position: absolute;
+      width: 204px;
+      height: 65px;
+      left: -180px;
+      bottom: 40px;
+    }
+  }
+
+  /* 첫번째 꽃 */
+
+  .flower-1 {
+    background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/leaf1_img.png) 0 0 no-repeat;
+    background-size: 100% auto;
+    width: 378px;
+    height: 437px;
+    position: absolute;
+    bottom: -500px;
+    left: -167px;
+    transition: all 0.8s;
+    transition-delay: 2s;
+  }
+
+  .ani .flower-1 {
+    bottom: 0;
+  }
+
+  /* 두번째 꽃 */
+
+  .flower-2 {
+    background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/leaf2_img.png) 0 0 no-repeat;
+    background-size: 100% auto;
+    width: 225px;
+    height: 256px;
+    position: absolute;
+    top: -300px;
+    left: 390px;
+    transition: all 0.8s;
+    transition-delay: 2.5s;
+  }
+
+  .ani .flower-2 {
+    top: 0;
+  }
+
+  /* 꽃잎 */
+
+  .leaf {
+    background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/bev1_img.png) 0 0 no-repeat;
+    position: absolute;
+    right: 50px;
+    width: 300px;
+    height: 502px;
+    opacity: 0;
+    transition: all 3s;
+    transition-delay: 3s;
+  }
+
+  .ani .leaf {
+    opacity: 1;
+    width: 1190px;
+  }
+
+  /* 비쥬얼 타이틀 */
+
+  .title {
+    background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/17sp2_emblem.png) 0 0 no-repeat;
+    background-size: 100% auto;
+    width: 350px;
+    height: 242px;
+    position: absolute;
+    left: 60px;
+    top: 100px;
+    opacity: 0;
+    transition: all 2s;
+    transition-delay: 4s;
+  }
+
+  .ani .title {
+    opacity: 1;
+  }
+
+  .clearfix:after, .container:after, ul:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+
+  .col-left {
+    float: left;
+    width: 50%;
+    text-align: right;
+  }
+
+  .col-right {
+    padding: 40px 0;
+    float: left;
+    width: 50%;
+  }
+
+  section.favorit {
+    background: url(https://www.istarbucks.co.kr/common/img/main/fav_prod_bg_new.jpg) 0 0 no-repeat;
+    height: 700px;
+    background-attachment: fixed;
+  }
+}

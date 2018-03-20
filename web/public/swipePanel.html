@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <title>slide</title>
+
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- google material icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/style.css?v=css_Ver2">
+
+    <script src="../assets/js/lib/jquery-1.12.2.min.js" type="text/javascript"></script>
+    <script src="../assets/js/lib/jquery.dotdotdot.js"></script>
+    <script src="../assets/js/lib/slick.js"></script>
+    <script src="../assets/js/lib/jquery.easing.1.3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+    <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+    <script src="../assets/js/script.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="paging-fadeout">
+    <div class="paging-gage"></div>
+
+    <div class="swipePanel">
+        <nav>
+            <ul>
+                <li class="nav-item">home</li>
+                <li class="nav-item">about</li>
+                <li class="nav-item">service</li>
+                <li class="nav-item">work</li>
+                <li class="nav-item">contact</li>
+                <li class="nav-item">add1</li>
+                <li class="nav-item">add2</li>
+                <li class="nav-item">add3</li>
+                <li class="nav-item">add4</li>
+            </ul>
+        </nav>
+        <div class="content">
+            <div class="track">
+                <div class="panel">
+                    <h2>home</h2>
+                </div>
+                <div class="panel">
+                    <h2>about</h2>
+                </div>
+                <div class="panel">
+                    <h2>service</h2>
+                </div>
+                <div class="panel">
+                    <h2>work</h2>
+                </div>
+                <div class="panel">
+                    <h2>contact</h2>
+                </div>
+                <div class="panel">
+                    <h2>add1</h2>
+                </div>
+                <div class="panel">
+                    <h2>add2</h2>
+                </div>
+                <div class="panel">
+                    <h2>add3</h2>
+                </div>
+                <div class="panel">
+                    <h2>add4</h2>
+                </div>
+            </div>
+        </div>
+        <div class="contorll">
+            <button class="btn prev">prev</button>
+            <button class="btn next">next</button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+
+    var swipePanel = {
+        init : function () {
+            swipePanel.swipeContent();
+        },
+        swipeContent : function () {
+            var currentPanelIndex = 0,
+                swipeContainer = $('.swipePanel'),
+                track = $('.swipePanel .track'),
+                panel = track.find('.panel'),
+                navUl = $('.swipePanel nav ul'),
+                navItem = $('.swipePanel .nav-item'),
+                navItemLength = navItem.length;
+
+            /**
+             * init set
+             */
+            track.css({
+                width : navItemLength * 100 +"%"
+            });
+            panel.css({
+                width : 10 / navItemLength * 10 +"%"
+            });
+
+
+
+            /**
+             * Action Panel Index
+             */
+            // Panel Action
+            function handlePanel(index) {
+                currentPanelIndex = index;
+
+                track.css({
+                    'margin-left': -index * 100 + '%'
+                })
+            }
+
+            // next panel
+            function nextPanel() {
+                currentPanelIndex++;
+
+                if(currentPanelIndex > navItemLength - 1){
+                    currentPanelIndex = 0;
+                }
+                handleNav(currentPanelIndex)
+                handlePanel(currentPanelIndex);
+            }
+
+            // prev panel
+            function prevPanel() {
+                currentPanelIndex--;
+
+                if(currentPanelIndex < 0){
+                    currentPanelIndex = navItemLength - 1;
+                }
+                handleNav(currentPanelIndex)
+                handlePanel(currentPanelIndex);
+            }
+
+            /**
+             * Handle Controller
+             */
+            // ctrl prev
+            function handlePrev() {
+                prevPanel();
+            }
+            // ctrl next
+            function handleNext() {
+                nextPanel();
+            }
+
+            /**
+             * Handle Navigation
+             */
+            function handleNav(currentPanelIndex) {
+                handlePanel(currentPanelIndex);
+
+                navItem.eq(currentPanelIndex).addClass('is-active').siblings().removeClass('is-active');
+
+                var oflFirst = navItem.eq(0).offset().left,
+                    oflEl = navItem.eq(currentPanelIndex).offset().left,
+                    ofl = oflEl - oflFirst,
+                    containeHalf = swipeContainer.width() / 2;
+
+                if(ofl > containeHalf){
+                    navUl.stop().animate({scrollLeft: ofl - containeHalf + 50 });
+                } else  {
+                    navUl.stop().animate({scrollLeft: 0});
+                }
+            }
+
+            /**
+             * onClick Navigation
+             */
+            navItem.on('click', function () {
+                var self = $(this),
+                    currentPanelIndex = self.index();
+                handleNav(currentPanelIndex);
+            }).eq(0).trigger('click');
+
+
+            /**
+             * Handle Swipe
+             */
+            var myElement = document.querySelector('.content');
+            var mc = new Hammer(myElement);
+
+            mc.on("swiperight", function(ev) {
+                handlePrev();
+            });
+            mc.on("swipeleft", function(ev) {
+                handleNext();
+            });
+
+
+            /**
+             * onClick prevButton, nextButton
+             */
+             $('.swipePanel .prev').on('click', function () {
+                 handlePrev();
+             });
+
+             $('.swipePanel .next').on('click', function () {
+                 handleNext();
+             });
+
+        }
+    };
+
+    swipePanel.init();
+
+</script>
+</body>
+</html>

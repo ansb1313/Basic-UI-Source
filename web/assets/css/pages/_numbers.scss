@@ -1,0 +1,43 @@
+.numbers-visual {
+  position: relative;
+  height: 100vh;
+  .bg {
+    background: #000;
+    height: 100vh;
+    overflow: hidden;
+    span {
+      color: #fff;
+      opacity: 0.7;
+      display: inline-block;
+      width: 6%;
+      padding: 2.3% 0;
+      min-width: 20px;
+      text-align: center;
+    }
+  }
+
+
+  .media {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: .7;
+    width: 150px;
+    height: 200px;
+    margin-left: -75px;
+    margin-top: -100px;
+    overflow: hidden;
+    transform: skew(-25deg);
+    -webkit-box-shadow:  1px 1px 180px 65px rgba(255, 255, 255, 0.2);
+    -moz-box-shadow:  1px 1px 180px 65px rgba(255, 255, 255, 0.2);
+    box-shadow:  1px 1px 180px 65px rgba(255, 255, 255, 0.2);
+    .image {
+      transform: skew(25deg);
+      width: 200%;
+      height: 200%;
+      margin-left: -50%;
+      margin-top: -50%;
+      background: url(https://images.unsplash.com/photo-1494444815173-e6b337c86d49?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=26018129013eb41cc6441433ce32d212&auto=format&fit=crop&w=1650&q=80) 50% / cover no-repeat;
+    }
+  }
+}

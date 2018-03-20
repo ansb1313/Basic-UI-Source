@@ -1,0 +1,115 @@
+.handler {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1500;
+  width: 200px;
+  padding: 10px;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.65);
+  h1 a {
+    font-size: 25px;
+    color: #08c;
+    font-weight: bold;
+  }
+  h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    text-transform: capitalize;
+    margin: 30px 0 10px;
+  }
+  ul li {
+    margin-bottom: 5px;
+  }
+  .filter-options {
+    padding-left: 10px;
+    h3 {
+      font-size: 15px;
+      margin: 15px 0 3px;
+      font-weight: 400;
+      text-transform: capitalize;
+    }
+    p {
+      font-size: 13px;
+      color: #555;
+    }
+  }
+  button {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 300;
+    background: transparent;
+    text-align: left;
+    -ms-word-break: keep-all;
+    word-break: keep-all;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    &:hover {
+      background: rgba(0, 136, 204, 0.51);
+      color: #fff;
+    }
+  }
+}
+
+.yt-visual {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  .YTPOverlay {
+    /* mask css */
+    -webkit-background-size: contain!important;
+    background-size: contain!important;
+  }
+
+  #player {
+    padding-bottom: 150vh!important;
+    margin-top: -25vh!important;
+    width: 130vw!important;
+    margin-left: -15vw!important;
+  }
+  .next-section {
+    position: absolute;
+    bottom: 50px;
+    right: 80px;
+    cursor: pointer;
+  }
+  .next-section i {
+    font-size: 50px;
+    color: #fff;
+  }
+}
+
+#main {
+  padding-left: 200px;
+  .player-on & {
+    position: fixed;
+    top: 100%;
+    width: 100%;
+  }
+  .section-title {
+    text-align: center;
+    font-size: 40px;
+    text-transform: capitalize;
+    font-weight: 500;
+  }
+
+  .about,
+  .service,
+  .contact {
+    height: 100vh;
+    background: #f5f5f5;
+    padding: 100px 0;
+    border-bottom: 3px solid #ddd;
+  }
+}

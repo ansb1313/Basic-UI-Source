@@ -1,0 +1,212 @@
+.page-title {
+  padding: 120px 0;
+  text-align: center;
+  h2 {
+    font-size: 28px;
+    font-weight: 400;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  p {
+    font-size: 20px;
+    color: #777;
+  }
+}
+
+.history-area {
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 1px;
+    top: 0;
+    bottom: 0;
+    background: #eee;
+    opacity: 0.8;
+  }
+}
+
+.nav-history {
+  position: fixed;
+  right: 0;
+  top: 50px;
+  z-index: 500;
+  .nav-year {
+    padding: 10px;
+    text-align: center;
+    min-width: 160px;
+    color: #ddd;
+    cursor: pointer;
+    text-transform: uppercase;
+    &.is-current {
+      color: #333;
+    }
+  }
+}
+
+.circle-current {
+  position: absolute;
+  z-index: 100;
+  top: -7px;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin-left: -10px;
+  background: rgba(0, 136, 204, 0.35);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+  &:before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #08c;
+    left: 50%;
+    top: 50%;
+    margin-top: -3px;
+    margin-left: -3px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+  }
+}
+
+ul {
+  li {
+    .thumb,
+    .desc {
+      width: 50%;
+      overflow: hidden;
+    }
+    &:nth-child(2n + 1) {
+      .thumb {
+        float: left;
+      }
+      .desc {
+        float: right;
+        padding: 115px 40px 40px;
+      }
+    }
+    &:nth-child(2n) {
+      .thumb {
+        float: right;
+        padding-left: 1px;
+      }
+      .desc {
+        float: left;
+        padding: 115px 40px 40px 120px;
+      }
+    }
+  }
+}
+
+.history-item {
+  position: relative;
+  padding: 50px 0;
+  overflow: hidden;
+  &:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -3px;
+    width: 6px;
+    height: 6px;
+    background: #eee;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+  }
+  .thumb {
+    h3 {
+      padding-left: 30px;
+      font-size: 70px;
+      color: #eee;
+      font-weight: bold;
+      line-height: 1;
+      position: relative;
+      left: -100px;
+      opacity: 0;
+      -webkit-transition: all 1s;
+      -moz-transition: all 1s;
+      -ms-transition: all 1s;
+      -o-transition: all 1s;
+      transition: all 1s;
+      .history-current & {
+        opacity: 1;
+        left: 0;
+      }
+    }
+    .image {
+      position: relative;
+      top: 80px;
+      opacity: 0;
+      height: 340px;
+      background: 50% 50% /cover no-repeat;
+      -webkit-transition: all 1.2s;
+      -moz-transition: all 1.2s;
+      -ms-transition: all 1.2s;
+      -o-transition: all 1.2s;
+      transition: all 1.2s;
+      .history-current & {
+        opacity: 1;
+        top: 0;
+      }
+      &.image1 {
+        background-image: url(https://image.drjart.com/front/ko/images/brand/history_thumb2017.jpg);
+      }
+      &.image2 {
+        background-image: url(https://image.drjart.com/front/ko/images/brand/history_thumb2016.jpg);
+      }
+      &.image3 {
+        background-image: url(https://image.drjart.com/front/ko/images/brand/history_thumb2015.jpg);
+      }
+      &.image4 {
+        background-image: url(https://image.drjart.com/front/ko/images/brand/history_thumb2014.jpg);
+      }
+      &.image5 {
+        background-image: url(https://image.drjart.com/front/ko/images/brand/history_thumb2013.jpg);
+      }
+      &.image6 {
+        background-image: url(https://image.drjart.com/front/ko/images/brand/history_thumb2012.jpg);
+      }
+      &.image7 {
+        background-image: url(https://image.drjart.com/front/ko/images/brand/history_thumb2011.jpg);
+      }
+    }
+  }
+
+  .desc {
+    h3 {
+      font-size: 25px;
+      font-weight: 400;
+      color: #333;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+    dl {
+      margin-bottom: 30px;
+      dt {
+        float: left;
+        font-size: 14px;
+        font-weight: 400;
+        color: #333;
+        line-height: 1.5;
+      }
+      dd {
+        margin-left: 50px;
+        line-height: 1.5;
+        font-size: 15px;
+        color: #777;
+      }
+    }
+  }
+}
