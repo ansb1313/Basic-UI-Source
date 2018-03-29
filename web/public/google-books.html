@@ -47,10 +47,12 @@
         </div>
     </div>
 </div>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
 <script>
     // variable
     var $container = $('.books-info ul'),
         $buttonSearch = $('.btn-search');
+
 
 
     // current state setting
@@ -59,6 +61,8 @@
         maxResults = 10,
         infiniteScroll = false;
 
+
+    var $grid = $container.masonry();
 
     booksApi('javascript');
 
@@ -103,9 +107,41 @@
                 if(data.items == undefined){
                     alert('검색 내용이 없습니다.')
                 } else {
-                    $container.append(
-                        render(data.items)
-                    )
+                    var renderElems = data.items.map(function(info){
+                        var infoPath = info.volumeInfo,
+                            title = infoPath.title,
+                            author = infoPath.authors,
+                            description = _.truncate(infoPath.description, {
+                                'length': 120,
+                                'separator': ' '
+                            }),
+                            publishedDate = infoPath.publishedDate,
+                            img = _.isUndefined(infoPath.imageLinks)
+                                ? "http://soofm.com/home/skin/latest/sloll/img/no_image.gif"
+                                : infoPath.imageLinks.thumbnail;
+
+
+                        return `<li class="grid-item">
+                                          <div class="item">
+                                            <div class="thumbnail">
+                                              <img src="${img}" alt="">
+                                            </div>
+                                            <div class="description clearfix">
+                                              <h3>${title}</h3>
+                                              <p>${description}</p>
+                                              <span>${publishedDate}</span>
+                                              <span>${author}</span>
+                                            </div>
+                                          </div>
+                                        </li>`;
+                    })
+
+                    var elems = _.join(renderElems, '')
+                    var $elems = $(elems);
+
+                    $grid.append($elems)
+                        .masonry( 'appended', $elems)
+                        .masonry( 'layout');
                 }
             },
             error : function(){
@@ -115,36 +151,7 @@
     }
 
     function render(data){
-        return data.map(function(info){
-            var infoPath = info.volumeInfo,
-                title = infoPath.title,
-                author = infoPath.authors,
-                description = _.truncate(infoPath.description, {
-                    'length': 120,
-                    'separator': ' '
-                }),
-                publishedDate = infoPath.publishedDate,
-                img = _.isUndefined(infoPath.imageLinks)
-                    ? "http://soofm.com/home/skin/latest/sloll/img/no_image.gif"
-                    : infoPath.imageLinks.thumbnail;
-
-
-            var $rest = $(` <li class="grid-item">
-                      <div class="item">
-                        <div class="thumbnail">
-                          <img src="${img}" alt="">
-                        </div>
-                        <div class="description clearfix">
-                          <h3>${title}</h3>
-                          <p>${description}</p>
-                          <span>${publishedDate}</span>
-                          <span>${author}</span>
-                        </div>
-                      </div>
-                    </li>
-                   `)
-            return $rest;
-        })
+        return
     }
 
 
