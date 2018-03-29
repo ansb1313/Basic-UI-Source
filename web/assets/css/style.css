@@ -1895,4 +1895,74 @@ ul li:nth-child(2n) .desc {
     height: 700px;
     background-attachment: fixed; }
 
+.google-books {
+  padding: 150px 0; }
+  .google-books .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 50px 0 30px;
+    background: #fff;
+    z-index: 1000;
+    box-shadow: 0 20px 40px #fff; }
+    .google-books .header .search-area {
+      display: flex;
+      justify-content: center; }
+      .google-books .header .search-area input {
+        background: #fff;
+        height: 45px;
+        font-size: 16px;
+        color: #333;
+        padding: 8px;
+        border: 1px solid #aaa;
+        vertical-align: middle;
+        width: 20%;
+        min-width: 200px;
+        margin-right: 10px; }
+      .google-books .header .search-area .max-results {
+        padding: 0 5px;
+        font-size: 14px; }
+      .google-books .header .search-area .btn-search {
+        height: 45px;
+        min-width: 120px;
+        text-align: center;
+        margin-left: 10px;
+        border: 1px solid #aaa;
+        background: #fff;
+        color: #333;
+        cursor: pointer; }
+  .google-books .books-info {
+    max-width: 1200px;
+    margin: 0 auto; }
+    .google-books .books-info ul li {
+      padding: 15px;
+      margin-bottom: 15px;
+      width: 33.33%;
+      float: left; }
+      .google-books .books-info ul li:nth-child(3n+1) {
+        clear: both; }
+      .google-books .books-info ul li .item {
+        border: 1px solid #ddd; }
+        .google-books .books-info ul li .item .thumbnail {
+          text-align: center;
+          padding: 40px 20px 10px; }
+          .google-books .books-info ul li .item .thumbnail img {
+            height: 180px; }
+        .google-books .books-info ul li .item .description {
+          padding: 25px 20px; }
+          .google-books .books-info ul li .item .description h3 {
+            font-size: 19px;
+            margin-bottom: 10px;
+            line-height: 1.5; }
+          .google-books .books-info ul li .item .description p {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 10px; }
+          .google-books .books-info ul li .item .description span {
+            font-size: 14px;
+            color: #888; }
+            .google-books .books-info ul li .item .description span + span {
+              float: right; }
+
 /*# sourceMappingURL=style.css.map */
