@@ -47,9 +47,8 @@
       padding: 15px;
       margin-bottom: 15px;
       width: 33.33%;
-      float: left;
-      &:nth-child(3n+1){
-        clear: both;;
+      &.grid-sizer {
+        width: 33.33%;
       }
       .item {
         border: 1px solid #ddd;

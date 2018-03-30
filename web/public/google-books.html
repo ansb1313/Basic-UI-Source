@@ -62,7 +62,11 @@
         infiniteScroll = false;
 
 
-    var $grid = $container.masonry();
+    var $grid = $container.masonry({
+        itemSelector: '.grid-item',
+        columnWidth: 33.33,
+        percentPosition: true
+    });
 
     booksApi('javascript');
 
@@ -139,7 +143,7 @@
                     var elems = _.join(renderElems, '')
                     var $elems = $(elems);
 
-                    $grid.append($elems)
+                    $('.grid').append($elems)
                         .masonry( 'appended', $elems)
                         .masonry( 'layout');
                 }
