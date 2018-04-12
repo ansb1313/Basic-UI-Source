@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900");
 @font-face {
@@ -888,22 +887,21 @@ Main Page
 .slick-arrow-square .slick-prev:after {
   content: '\f104'; }
 
-.page-title {
+.page-history .page-title {
   padding: 120px 0;
   text-align: center; }
-  .page-title h2 {
+  .page-history .page-title h2 {
     font-size: 28px;
     font-weight: 400;
     color: #333;
     text-transform: uppercase;
     margin-bottom: 20px; }
-  .page-title p {
+  .page-history .page-title p {
     font-size: 20px;
     color: #777; }
-
-.history-area {
+.page-history .history-area {
   position: relative; }
-  .history-area:before {
+  .page-history .history-area:before {
     content: "";
     position: absolute;
     left: 50%;
@@ -912,23 +910,21 @@ Main Page
     bottom: 0;
     background: #eee;
     opacity: 0.8; }
-
-.nav-history {
+.page-history .nav-history {
   position: fixed;
   right: 0;
   top: 50px;
   z-index: 500; }
-  .nav-history .nav-year {
+  .page-history .nav-history .nav-year {
     padding: 10px;
     text-align: center;
     min-width: 160px;
     color: #ddd;
     cursor: pointer;
     text-transform: uppercase; }
-    .nav-history .nav-year.is-current {
+    .page-history .nav-history .nav-year.is-current {
       color: #333; }
-
-.circle-current {
+.page-history .circle-current {
   position: absolute;
   z-index: 100;
   top: -7px;
@@ -945,7 +941,7 @@ Main Page
   -ms-transition: all 1s;
   -o-transition: all 1s;
   transition: all 1s; }
-  .circle-current:before {
+  .page-history .circle-current:before {
     content: "";
     position: absolute;
     width: 6px;
@@ -958,28 +954,26 @@ Main Page
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%; }
-
-ul li .thumb,
-ul li .desc {
+.page-history ul li .thumb,
+.page-history ul li .desc {
   width: 50%;
   overflow: hidden; }
-ul li:nth-child(2n + 1) .thumb {
+.page-history ul li:nth-child(2n + 1) .thumb {
   float: left; }
-ul li:nth-child(2n + 1) .desc {
+.page-history ul li:nth-child(2n + 1) .desc {
   float: right;
   padding: 115px 40px 40px; }
-ul li:nth-child(2n) .thumb {
+.page-history ul li:nth-child(2n) .thumb {
   float: right;
   padding-left: 1px; }
-ul li:nth-child(2n) .desc {
+.page-history ul li:nth-child(2n) .desc {
   float: left;
   padding: 115px 40px 40px 120px; }
-
-.history-item {
+.page-history .history-item {
   position: relative;
   padding: 50px 0;
   overflow: hidden; }
-  .history-item:before {
+  .page-history .history-item:before {
     content: "";
     position: absolute;
     left: 50%;
@@ -991,7 +985,7 @@ ul li:nth-child(2n) .desc {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%; }
-  .history-item .thumb h3 {
+  .page-history .history-item .thumb h3 {
     padding-left: 30px;
     font-size: 70px;
     color: #eee;
@@ -1005,10 +999,10 @@ ul li:nth-child(2n) .desc {
     -ms-transition: all 1s;
     -o-transition: all 1s;
     transition: all 1s; }
-    .history-current .history-item .thumb h3 {
+    .history-current .page-history .history-item .thumb h3 {
       opacity: 1;
       left: 0; }
-  .history-item .thumb .image {
+  .page-history .history-item .thumb .image {
     position: relative;
     top: 80px;
     opacity: 0;
@@ -1019,38 +1013,38 @@ ul li:nth-child(2n) .desc {
     -ms-transition: all 1.2s;
     -o-transition: all 1.2s;
     transition: all 1.2s; }
-    .history-current .history-item .thumb .image {
+    .history-current .page-history .history-item .thumb .image {
       opacity: 1;
       top: 0; }
-    .history-item .thumb .image.image1 {
+    .page-history .history-item .thumb .image.image1 {
       background-image: url(https://image.drjart.com/front/ko/images/brand/history_thumb2017.jpg); }
-    .history-item .thumb .image.image2 {
+    .page-history .history-item .thumb .image.image2 {
       background-image: url(https://image.drjart.com/front/ko/images/brand/history_thumb2016.jpg); }
-    .history-item .thumb .image.image3 {
+    .page-history .history-item .thumb .image.image3 {
       background-image: url(https://image.drjart.com/front/ko/images/brand/history_thumb2015.jpg); }
-    .history-item .thumb .image.image4 {
+    .page-history .history-item .thumb .image.image4 {
       background-image: url(https://image.drjart.com/front/ko/images/brand/history_thumb2014.jpg); }
-    .history-item .thumb .image.image5 {
+    .page-history .history-item .thumb .image.image5 {
       background-image: url(https://image.drjart.com/front/ko/images/brand/history_thumb2013.jpg); }
-    .history-item .thumb .image.image6 {
+    .page-history .history-item .thumb .image.image6 {
       background-image: url(https://image.drjart.com/front/ko/images/brand/history_thumb2012.jpg); }
-    .history-item .thumb .image.image7 {
+    .page-history .history-item .thumb .image.image7 {
       background-image: url(https://image.drjart.com/front/ko/images/brand/history_thumb2011.jpg); }
-  .history-item .desc h3 {
+  .page-history .history-item .desc h3 {
     font-size: 25px;
     font-weight: 400;
     color: #333;
     margin-bottom: 30px;
     line-height: 1.5; }
-  .history-item .desc dl {
+  .page-history .history-item .desc dl {
     margin-bottom: 30px; }
-    .history-item .desc dl dt {
+    .page-history .history-item .desc dl dt {
       float: left;
       font-size: 14px;
       font-weight: 400;
       color: #333;
       line-height: 1.5; }
-    .history-item .desc dl dd {
+    .page-history .history-item .desc dl dd {
       margin-left: 50px;
       line-height: 1.5;
       font-size: 15px;
@@ -1667,233 +1661,224 @@ ul li:nth-child(2n) .desc {
     .nav-motions .section-nav ul li.current {
       color: #ff5252; }
 
-.starbucksVisual {
-  /* 비쥬얼 상단 삼각형 배경 */
-  /* 비쥬얼 하단 삼각형 배경 */
-  /* 첫번째 음료 */
-  /* 두번째 음료 */
-  /* 첫번째 꽃 */
-  /* 두번째 꽃 */
-  /* 꽃잎 */
-  /* 비쥬얼 타이틀 */ }
-  .starbucksVisual header .top-header {
-    background: #f6f5ef;
-    height: 50px; }
-    .starbucksVisual header .top-header .member-area {
-      float: right; }
-      .starbucksVisual header .top-header .member-area a {
+.starbucksVisual header .top-header {
+  background: #f6f5ef;
+  height: 50px; }
+  .starbucksVisual header .top-header .member-area {
+    float: right; }
+    .starbucksVisual header .top-header .member-area a {
+      color: #555;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 50px;
+      padding: 16px; }
+    .starbucksVisual header .top-header .member-area span.bar {
+      color: #d1d5ad;
+      font-size: 13px; }
+  .starbucksVisual header .top-header .search-area i {
+    position: absolute;
+    top: 10px;
+    right: -30px;
+    border: 1px solid #999;
+    padding: 5px;
+    background: #fff;
+    border-radius: 20%;
+    font-size: 23px; }
+.starbucksVisual header .main-header {
+  background: #f6f5ef;
+  height: 72px;
+  border-bottom: 1px solid #d6d6d6;
+  position: relative; }
+  .starbucksVisual header .main-header h1.logo {
+    position: absolute;
+    top: -25px; }
+  .starbucksVisual header .main-header .gnb {
+    float: right; }
+    .starbucksVisual header .main-header .gnb > ul {
+      float: left; }
+    .starbucksVisual header .main-header .gnb ul li.nav-item {
+      float: left; }
+      .starbucksVisual header .main-header .gnb ul li.nav-item a.nav-link {
+        font-size: 16px;
         color: #555;
-        font-size: 14px;
-        font-weight: normal;
-        line-height: 50px;
-        padding: 16px; }
-      .starbucksVisual header .top-header .member-area span.bar {
-        color: #d1d5ad;
-        font-size: 13px; }
-    .starbucksVisual header .top-header .search-area i {
-      position: absolute;
-      top: 10px;
-      right: -30px;
-      border: 1px solid #999;
-      padding: 5px;
-      background: #fff;
-      border-radius: 20%;
-      font-size: 23px; }
-  .starbucksVisual header .main-header {
-    background: #f6f5ef;
-    height: 72px;
-    border-bottom: 1px solid #d6d6d6;
-    position: relative; }
-    .starbucksVisual header .main-header h1.logo {
-      position: absolute;
-      top: -25px; }
-    .starbucksVisual header .main-header .gnb {
-      float: right; }
-      .starbucksVisual header .main-header .gnb > ul {
-        float: left; }
-      .starbucksVisual header .main-header .gnb ul li.nav-item {
-        float: left; }
-        .starbucksVisual header .main-header .gnb ul li.nav-item a.nav-link {
-          font-size: 16px;
-          color: #555;
-          padding: 25px;
-          display: block; }
-        .starbucksVisual header .main-header .gnb ul li.nav-item:hover a.nav-link {
-          color: #669900;
-          background: #2C2A29; }
-        .starbucksVisual header .main-header .gnb ul li.nav-item .dropdown {
-          position: absolute;
-          background: #2C2A29;
-          left: 0;
-          right: 0;
-          display: none;
-          z-index: 1000; }
-        .starbucksVisual header .main-header .gnb ul li.nav-item:hover .dropdown {
-          display: block; }
-        .starbucksVisual header .main-header .gnb ul li.nav-item .dropdown > ul {
-          width: 1200px;
-          margin: 0 auto;
-          padding: 30px 0; }
-          .starbucksVisual header .main-header .gnb ul li.nav-item .dropdown > ul > li {
-            width: 20%;
-            float: left; }
-            .starbucksVisual header .main-header .gnb ul li.nav-item .dropdown > ul > li:nth-child(5n+ 6) {
-              clear: both;
-              margin-top: 30px; }
-            .starbucksVisual header .main-header .gnb ul li.nav-item .dropdown > ul > li > a {
-              color: #fff;
-              font-size: 14px;
-              padding: 5px 0;
-              display: block; }
-            .starbucksVisual header .main-header .gnb ul li.nav-item .dropdown > ul > li > ul li a {
-              color: #999;
-              font-size: 12px; }
-  .starbucksVisual .visual {
-    height: 646px;
+        padding: 25px;
+        display: block; }
+      .starbucksVisual header .main-header .gnb ul li.nav-item:hover a.nav-link {
+        color: #669900;
+        background: #2C2A29; }
+      .starbucksVisual header .main-header .gnb ul li.nav-item .dropdown {
+        position: absolute;
+        background: #2C2A29;
+        left: 0;
+        right: 0;
+        display: none;
+        z-index: 1000; }
+      .starbucksVisual header .main-header .gnb ul li.nav-item:hover .dropdown {
+        display: block; }
+      .starbucksVisual header .main-header .gnb ul li.nav-item .dropdown > ul {
+        width: 1200px;
+        margin: 0 auto;
+        padding: 30px 0; }
+        .starbucksVisual header .main-header .gnb ul li.nav-item .dropdown > ul > li {
+          width: 20%;
+          float: left; }
+          .starbucksVisual header .main-header .gnb ul li.nav-item .dropdown > ul > li:nth-child(5n+ 6) {
+            clear: both;
+            margin-top: 30px; }
+          .starbucksVisual header .main-header .gnb ul li.nav-item .dropdown > ul > li > a {
+            color: #fff;
+            font-size: 14px;
+            padding: 5px 0;
+            display: block; }
+          .starbucksVisual header .main-header .gnb ul li.nav-item .dropdown > ul > li > ul li a {
+            color: #999;
+            font-size: 12px; }
+.starbucksVisual .visual {
+  height: 646px;
+  position: relative;
+  overflow: hidden; }
+  .starbucksVisual .visual .container {
     position: relative;
-    overflow: hidden; }
-    .starbucksVisual .visual .container {
-      position: relative;
-      height: 100%; }
-  .starbucksVisual .visual-bg-1 {
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    height: 0;
-    width: 2954px;
-    margin-left: -2000px;
-    transition: all 0.8s;
-    background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/bg1.png) 0 0 no-repeat; }
-  .starbucksVisual .ani .visual-bg-1 {
-    height: 646px; }
-  .starbucksVisual .visual-bg-1 img {
-    position: absolute;
-    top: 0; }
-  .starbucksVisual .visual-bg-2 {
-    background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/bg2.png) 100% 100% no-repeat;
-    overflow: hidden;
-    position: absolute;
-    right: 50%;
-    bottom: 0;
-    height: 0;
-    width: 2954px;
-    margin-right: -2001px;
-    transition: all 0.8s; }
-  .starbucksVisual .ani .visual-bg-2 {
-    height: 646px; }
-  .starbucksVisual .visual-bg-2 img {
-    position: absolute;
-    bottom: 0; }
-  .starbucksVisual .beverage-1 {
-    position: absolute;
-    right: 90px;
-    bottom: 135px;
-    opacity: 0;
-    transition: all 1s;
-    transition-delay: 0.8s; }
-  .starbucksVisual .ani .beverage-1 {
-    opacity: 1; }
-  .starbucksVisual .beverage-1 .beverage_cup {
-    background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/bev1_cup.png) 0 0 no-repeat;
-    background-size: 100% auto;
-    width: 471px;
-    height: 455px; }
-  .starbucksVisual .beverage-1 .beverage_text {
-    background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/bev1_txt.png) 0 0 no-repeat;
-    background-size: 100% auto;
-    position: absolute;
-    top: 20px;
-    right: 65px;
-    width: 204px;
-    height: 65px; }
-  .starbucksVisual .beverage-2 {
-    position: absolute;
-    right: -95px;
-    bottom: 30px;
-    opacity: 0;
-    transition: all 1s;
-    transition-delay: 1.5s; }
-  .starbucksVisual .ani .beverage-2 {
-    opacity: 1; }
-  .starbucksVisual .beverage-2 .beverage_cup {
-    background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/bev2_cup.png) 0 0 no-repeat;
-    background-size: 100% auto;
-    width: 471px;
-    height: 362px; }
-  .starbucksVisual .beverage-2 .beverage_text {
-    background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/bev2_txt.png) 0 0 no-repeat;
-    background-size: 100% auto;
-    position: absolute;
-    width: 204px;
-    height: 65px;
-    left: -180px;
-    bottom: 40px; }
-  .starbucksVisual .flower-1 {
-    background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/leaf1_img.png) 0 0 no-repeat;
-    background-size: 100% auto;
-    width: 378px;
-    height: 437px;
-    position: absolute;
-    bottom: -500px;
-    left: -167px;
-    transition: all 0.8s;
-    transition-delay: 2s; }
-  .starbucksVisual .ani .flower-1 {
-    bottom: 0; }
-  .starbucksVisual .flower-2 {
-    background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/leaf2_img.png) 0 0 no-repeat;
-    background-size: 100% auto;
-    width: 225px;
-    height: 256px;
-    position: absolute;
-    top: -300px;
-    left: 390px;
-    transition: all 0.8s;
-    transition-delay: 2.5s; }
-  .starbucksVisual .ani .flower-2 {
-    top: 0; }
-  .starbucksVisual .leaf {
-    background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/bev1_img.png) 0 0 no-repeat;
-    position: absolute;
-    right: 50px;
-    width: 300px;
-    height: 502px;
-    opacity: 0;
-    transition: all 3s;
-    transition-delay: 3s; }
-  .starbucksVisual .ani .leaf {
-    opacity: 1;
-    width: 1190px; }
-  .starbucksVisual .title {
-    background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/17sp2_emblem.png) 0 0 no-repeat;
-    background-size: 100% auto;
-    width: 350px;
-    height: 242px;
-    position: absolute;
-    left: 60px;
-    top: 100px;
-    opacity: 0;
-    transition: all 2s;
-    transition-delay: 4s; }
-  .starbucksVisual .ani .title {
-    opacity: 1; }
-  .starbucksVisual .clearfix:after, .starbucksVisual .container:after, .starbucksVisual ul:after {
-    content: '';
-    display: block;
-    clear: both; }
-  .starbucksVisual .col-left {
-    float: left;
-    width: 50%;
-    text-align: right; }
-  .starbucksVisual .col-right {
-    padding: 40px 0;
-    float: left;
-    width: 50%; }
-  .starbucksVisual section.favorit {
-    background: url(https://www.istarbucks.co.kr/common/img/main/fav_prod_bg_new.jpg) 0 0 no-repeat;
-    height: 700px;
-    background-attachment: fixed; }
+    height: 100%; }
+.starbucksVisual .visual-bg-1 {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 0;
+  width: 2954px;
+  margin-left: -2000px;
+  transition: all 0.8s;
+  background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/bg1.png) 0 0 no-repeat; }
+.starbucksVisual .ani .visual-bg-1 {
+  height: 646px; }
+.starbucksVisual .visual-bg-1 img {
+  position: absolute;
+  top: 0; }
+.starbucksVisual .visual-bg-2 {
+  background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/bg2.png) 100% 100% no-repeat;
+  overflow: hidden;
+  position: absolute;
+  right: 50%;
+  bottom: 0;
+  height: 0;
+  width: 2954px;
+  margin-right: -2001px;
+  transition: all 0.8s; }
+.starbucksVisual .ani .visual-bg-2 {
+  height: 646px; }
+.starbucksVisual .visual-bg-2 img {
+  position: absolute;
+  bottom: 0; }
+.starbucksVisual .beverage-1 {
+  position: absolute;
+  right: 90px;
+  bottom: 135px;
+  opacity: 0;
+  transition: all 1s;
+  transition-delay: 0.8s; }
+.starbucksVisual .ani .beverage-1 {
+  opacity: 1; }
+.starbucksVisual .beverage-1 .beverage_cup {
+  background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/bev1_cup.png) 0 0 no-repeat;
+  background-size: 100% auto;
+  width: 471px;
+  height: 455px; }
+.starbucksVisual .beverage-1 .beverage_text {
+  background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/bev1_txt.png) 0 0 no-repeat;
+  background-size: 100% auto;
+  position: absolute;
+  top: 20px;
+  right: 65px;
+  width: 204px;
+  height: 65px; }
+.starbucksVisual .beverage-2 {
+  position: absolute;
+  right: -95px;
+  bottom: 30px;
+  opacity: 0;
+  transition: all 1s;
+  transition-delay: 1.5s; }
+.starbucksVisual .ani .beverage-2 {
+  opacity: 1; }
+.starbucksVisual .beverage-2 .beverage_cup {
+  background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/bev2_cup.png) 0 0 no-repeat;
+  background-size: 100% auto;
+  width: 471px;
+  height: 362px; }
+.starbucksVisual .beverage-2 .beverage_text {
+  background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/bev2_txt.png) 0 0 no-repeat;
+  background-size: 100% auto;
+  position: absolute;
+  width: 204px;
+  height: 65px;
+  left: -180px;
+  bottom: 40px; }
+.starbucksVisual .flower-1 {
+  background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/leaf1_img.png) 0 0 no-repeat;
+  background-size: 100% auto;
+  width: 378px;
+  height: 437px;
+  position: absolute;
+  bottom: -500px;
+  left: -167px;
+  transition: all 0.8s;
+  transition-delay: 2s; }
+.starbucksVisual .ani .flower-1 {
+  bottom: 0; }
+.starbucksVisual .flower-2 {
+  background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/leaf2_img.png) 0 0 no-repeat;
+  background-size: 100% auto;
+  width: 225px;
+  height: 256px;
+  position: absolute;
+  top: -300px;
+  left: 390px;
+  transition: all 0.8s;
+  transition-delay: 2.5s; }
+.starbucksVisual .ani .flower-2 {
+  top: 0; }
+.starbucksVisual .leaf {
+  background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/bev1_img.png) 0 0 no-repeat;
+  position: absolute;
+  right: 50px;
+  width: 300px;
+  height: 502px;
+  opacity: 0;
+  transition: all 3s;
+  transition-delay: 3s; }
+.starbucksVisual .ani .leaf {
+  opacity: 1;
+  width: 1190px; }
+.starbucksVisual .title {
+  background: url(https://www.istarbucks.co.kr/common/img/main/17spring2/17sp2_emblem.png) 0 0 no-repeat;
+  background-size: 100% auto;
+  width: 350px;
+  height: 242px;
+  position: absolute;
+  left: 60px;
+  top: 100px;
+  opacity: 0;
+  transition: all 2s;
+  transition-delay: 4s; }
+.starbucksVisual .ani .title {
+  opacity: 1; }
+.starbucksVisual .clearfix:after, .starbucksVisual .container:after, .starbucksVisual ul:after {
+  content: '';
+  display: block;
+  clear: both; }
+.starbucksVisual .col-left {
+  float: left;
+  width: 50%;
+  text-align: right; }
+.starbucksVisual .col-right {
+  padding: 40px 0;
+  float: left;
+  width: 50%; }
+.starbucksVisual section.favorit {
+  background: url(https://www.istarbucks.co.kr/common/img/main/fav_prod_bg_new.jpg) 0 0 no-repeat;
+  height: 700px;
+  background-attachment: fixed; }
 
 .google-books {
   padding: 150px 0; }
@@ -1937,10 +1922,9 @@ ul li:nth-child(2n) .desc {
     .google-books .books-info ul li {
       padding: 15px;
       margin-bottom: 15px;
-      width: 33.33%;
-      float: left; }
-      .google-books .books-info ul li:nth-child(3n+1) {
-        clear: both; }
+      width: 33.33%; }
+      .google-books .books-info ul li.grid-sizer {
+        width: 33.33%; }
       .google-books .books-info ul li .item {
         border: 1px solid #ddd; }
         .google-books .books-info ul li .item .thumbnail {
@@ -1964,5 +1948,267 @@ ul li:nth-child(2n) .desc {
             color: #888; }
             .google-books .books-info ul li .item .description span + span {
               float: right; }
+
+/**
+ Main page style
+*/
+.visual {
+  padding-bottom: 100px; }
+  .visual .bgc {
+    background: linear-gradient(-30deg, #eb3349, #f45c43); }
+  .visual .title {
+    height: 470px;
+    text-align: center; }
+    .visual .title:before {
+      content: '';
+      height: 100%;
+      display: inline-block;
+      vertical-align: middle; }
+    .visual .title .text {
+      display: inline-block;
+      vertical-align: middle;
+      padding-top: 20px;
+      white-space: nowrap; }
+      .visual .title .text img {
+        width: 410px;
+        position: relative;
+        top: 55px; }
+      .visual .title .text h1 {
+        font-size: 110px;
+        font-weight: 800;
+        color: rgba(255, 255, 255, 0.1);
+        text-transform: uppercase; }
+      .visual .title .text p {
+        color: #c41e31;
+        font-size: 28px;
+        font-weight: 400;
+        position: relative;
+        top: -65px; }
+  .visual .bg {
+    position: relative;
+    top: 50px; }
+    .visual .bg .phone {
+      position: absolute;
+      top: -100px;
+      left: 50%;
+      margin-left: -150px;
+      max-width: 300px; }
+
+.section-title {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 700;
+  color: #4c4c4c; }
+  .section-title.white {
+    color: #fff; }
+
+.story-behind {
+  padding: 70px 0 50px; }
+  .story-behind .history-lists {
+    position: relative;
+    padding-top: 40px; }
+    .story-behind .history-lists:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      width: 1px;
+      top: 60px;
+      bottom: 0;
+      background: #ddd; }
+    .story-behind .history-lists ul li {
+      clear: both;
+      margin-bottom: 50px; }
+      .story-behind .history-lists ul li.is-active .desc {
+        position: fixed; }
+    .story-behind .history-lists .thumb {
+      float: left;
+      width: 50%;
+      text-align: right;
+      padding-right: 110px; }
+      .story-behind .history-lists .thumb img {
+        max-width: 240px; }
+    .story-behind .history-lists .desc {
+      float: left;
+      width: 50%;
+      padding-left: 50px;
+      position: relative; }
+      .story-behind .history-lists .desc:first-child {
+        padding-top: 100px; }
+      .story-behind .history-lists .desc dl dt {
+        font-size: 24px;
+        font-weight: 600;
+        color: #f66665;
+        line-height: 1.3;
+        margin-bottom: 25px; }
+      .story-behind .history-lists .desc dl dd {
+        color: #333;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.5;
+        margin-bottom: 30px; }
+      .story-behind .history-lists .desc .dot {
+        position: absolute;
+        left: -37px;
+        top: 90px;
+        background: #fff;
+        padding: 20px; }
+        .story-behind .history-lists .desc .dot .ball {
+          width: 35px;
+          height: 35px;
+          background: #f66665;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          border-radius: 50%; }
+  .story-behind .banner {
+    position: relative;
+    height: 370px;
+    text-align: center;
+    padding-top: 35px;
+    background: linear-gradient(-30deg, #f45c43, #eb3349); }
+    .story-behind .banner:before {
+      content: '';
+      height: 100%;
+      display: inline-block;
+      vertical-align: middle; }
+    .story-behind .banner .text {
+      display: inline-block;
+      vertical-align: middle; }
+    .story-behind .banner:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 71px;
+      background: url(https://gbksoft.com/img/cases/timewilltell/white-bg.png) 50% 0/cover no-repeat; }
+
+.use-cases .title {
+  margin-bottom: 50px; }
+  .use-cases .title .cate {
+    margin-bottom: 20px; }
+    .use-cases .title .cate .wave {
+      display: inline-block; }
+      .use-cases .title .cate .wave .dot {
+        width: 6px;
+        height: 6px;
+        background: #f66665;
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: middle;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        -webkit-animation: wave 1.5s infinite;
+        -o-animation: wave 1.5s infinite;
+        animation: wave 1.5s infinite; }
+        .use-cases .title .cate .wave .dot:first-child {
+          -webkit-animation-delay: 0.2s;
+          -moz-animation-delay: 0.2s;
+          -o-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+    .use-cases .title .cate .h4 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #f66665;
+      display: inline-block;
+      vertical-align: middle;
+      text-transform: uppercase; }
+  .use-cases .title h3 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #444;
+    margin-bottom: 20px;
+    text-transform: capitalize; }
+  .use-cases .title p {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500; }
+    .use-cases .title p + p {
+      margin-top: 20px; }
+.use-cases .content ul li {
+  float: left;
+  width: 33.33%;
+  padding: 15px; }
+  .use-cases .content ul li .num {
+    margin-bottom: 15px; }
+  .use-cases .content ul li h4 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #444;
+    margin-bottom: 25px; }
+  .use-cases .content ul li p {
+    font-size: 16px;
+    color: #333;
+    font-weight: 400; }
+.use-cases .preview {
+  text-align: center;
+  padding: 30px 0; }
+  .use-cases .preview img {
+    max-width: 400px; }
+  .use-cases .preview.preview2 {
+    text-align: center;
+    position: relative; }
+    .use-cases .preview.preview2 .item {
+      position: relative;
+      display: inline-block; }
+      .use-cases .preview.preview2 .item img {
+        display: block;
+        position: relative; }
+      .use-cases .preview.preview2 .item img:nth-child(2) {
+        top: -150px; }
+      .use-cases .preview.preview2 .item img:nth-child(3) {
+        top: -300px; }
+      .use-cases .preview.preview2 .item img:nth-child(4) {
+        top: -450px; }
+  .use-cases .preview .motion-block {
+    position: absolute;
+    left: 50%;
+    top: 20%; }
+    .use-cases .preview .motion-block .block {
+      position: absolute;
+      -webkit-transition: all 600ms cubic-bezier(0.39, 0.575, 0.565, 1);
+      transition: all 600ms cubic-bezier(0.39, 0.575, 0.565, 1); }
+    .use-cases .preview .motion-block .left {
+      position: absolute;
+      left: 50%;
+      margin-left: -270px; }
+      .use-cases .preview .motion-block .left .block:nth-child(1) {
+        top: 100px;
+        left: 0; }
+      .use-cases .preview .motion-block .left .block:nth-child(2) {
+        top: 200px;
+        left: -40px; }
+      .use-cases .preview .motion-block .left .block:nth-child(3) {
+        top: 250px;
+        left: -20px; }
+      .use-cases .preview .motion-block .left .block:nth-child(4) {
+        top: 320px;
+        left: -80px; }
+    .use-cases .preview .motion-block .right {
+      position: absolute;
+      left: 50%;
+      margin-left: 200px; }
+      .use-cases .preview .motion-block .right .block:nth-child(1) {
+        top: -150px;
+        left: -50px; }
+      .use-cases .preview .motion-block .right .block:nth-child(2) {
+        top: -70px;
+        left: 60px; }
+      .use-cases .preview .motion-block .right .block:nth-child(3) {
+        top: 80px;
+        left: -30px; }
+      .use-cases .preview .motion-block .right .block:nth-child(4) {
+        top: 200px;
+        left: 40px; }
+.use-cases .case3 {
+  margin-top: -400px; }
+
+@keyframes wave {
+  0%, 60%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  30% {
+    -webkit-transform: translateY(-7px);
+    transform: translateY(-7px); } }
 
 /*# sourceMappingURL=style.css.map */
