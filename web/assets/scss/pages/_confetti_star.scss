@@ -1,0 +1,2819 @@
+html {
+    background: #000;
+}
+.confetti-animation {
+    position: relative;
+    width: 360px;
+    margin: 30px auto;
+    height: 400px;
+    overflow: hidden;
+    background: url(https://images.unsplash.com/photo-1544035292-820a95366868?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80) 0 0 / cover no-repeat;
+    .confetti-item {
+        position: absolute;
+        top: 0;
+        width: 0;
+        animation: 4s infinite forwards;
+    }
+
+    @for $i from 1 through 45 {
+        .ci#{$i} {
+            animation-name: star#{$i};
+        }
+    }
+    .ci1, .ci32,  .ci34 {
+        animation-timing-function: linear;
+    }
+}
+
+@function toPx($size) {
+    $pxSize: $size / 5;
+    @return $pxSize * 1px;
+}
+
+$totalFrame: 120;
+@function frameToRate($size) {
+    $rate: $size / $totalFrame * 100;
+    @return $rate * 1%;
+}
+
+@function posXRate($posX) {
+    @return $posX / 1250 * 100%
+}
+
+
+@keyframes rotation147 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(147deg);
+    }
+}
+@keyframes rotation367 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(367deg);
+
+    }
+}
+
+// star_1
+@keyframes star1 {
+    $posX   : 840;
+    $sPosY  : -450;
+    $ePosY  : 350;
+    $width  : 200;
+    $sDegree: 0;
+    $eDegree: 147;
+    $sFrame : 29;
+    $eFrame : 113;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate(103)} {
+        opacity: 0.6;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+
+
+// star_2
+@keyframes star2 {
+    $posX   : 1068;
+    $sPosY  : -70;
+    $ePosY  : 534;
+    $width  : 150;
+    $sDegree: 0;
+    $eDegree: 147;
+    $sFrame : 7;
+    $eFrame : 97;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+
+// star_3
+@keyframes star3 {
+    $posX   : 192;
+    $sPosY  : -160;
+    $ePosY  : 444;
+    $width  : 50;
+    $sDegree: 0;
+    $eDegree: 147;
+    $sFrame : 31;
+    $eFrame : 103;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate(83)} {
+        opacity: 0.8;
+    }
+    #{frameToRate(97)} {
+        opacity: 0;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+// star_4
+@keyframes star4 {
+    $posX   : 914;
+    $sPosY  : -292;
+    $ePosY  : 312;
+    $width  : 50;
+    $sDegree: 0;
+    $eDegree: 147;
+    $sFrame : 22;
+    $eFrame : 112;
+    0% {
+        opacity: 0;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate(25)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(29)} {
+        opacity: 0.8;
+    }
+    #{frameToRate(33)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(37)} {
+        opacity: 0.8;
+    }
+    #{frameToRate(42)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(46)} {
+        opacity: 0.8;
+    }
+    #{frameToRate(50)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(54)} {
+        opacity: 0.8;
+    }
+    #{frameToRate(58)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(62)} {
+        opacity: 0.8;
+    }
+    #{frameToRate(66)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(70)} {
+        opacity: 0.8;
+    }
+    #{frameToRate(74)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(78)} {
+        opacity: 0.8;
+    }
+    #{frameToRate(82)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(86)} {
+        opacity: 0.8;
+    }
+    #{frameToRate(90)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(94)} {
+        opacity: 0.8;
+    }
+    #{frameToRate(98)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(102)} {
+        opacity: 0.8;
+    }
+    #{frameToRate(106)} {
+        opacity: 0.6;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+// star_5
+@keyframes star5 {
+    $posX   : 830;
+    $sPosY  : -250;
+    $ePosY  : 473;
+    $width  : 50;
+    $sDegree: 0;
+    $eDegree: 367;
+    $sFrame : 13;
+    $eFrame : 68;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+    }
+    // 3,5 loop
+    #{frameToRate(16)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(21)} {
+        opacity: 1;
+    }
+    #{frameToRate(24)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(29)} {
+        opacity: 1;
+    }
+    #{frameToRate(32)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(37)} {
+        opacity: 1;
+    }
+    #{frameToRate(40)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(45)} {
+        opacity: 1;
+    }
+    #{frameToRate(48)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(53)} {
+        opacity: 1;
+    }
+    #{frameToRate(56)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(61)} {
+        opacity: 1;
+    }
+    #{frameToRate(64)} {
+        opacity: 0.5;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+// star_6
+@keyframes star6 {
+    $posX   : 354;
+    $sPosY  : -288;
+    $ePosY  : 435;
+    $width  : 050;
+    $sDegree: 0;
+    $eDegree: 367;
+    $sFrame : 5;
+    $eFrame : 61;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    // 3,5 loop
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+    }
+    #{frameToRate(8)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(11)} {
+        opacity: 1;
+    }
+    #{frameToRate(16)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(21)} {
+        opacity: 1;
+    }
+    #{frameToRate(24)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(29)} {
+        opacity: 1;
+    }
+    #{frameToRate(32)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(37)} {
+        opacity: 1;
+    }
+    #{frameToRate(40)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(45)} {
+        opacity: 1;
+    }
+    #{frameToRate(48)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(53)} {
+        opacity: 1;
+    }
+    #{frameToRate(56)} {
+        opacity: 0.5;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+
+// star_7
+@keyframes star7 {
+    $posX   : 1030;
+    $sPosY  : -160;
+    $ePosY  : 563;
+    $width  : 50;
+    $sDegree: 0;
+    $eDegree: 367;
+    $sFrame : 5;
+    $eFrame : 60;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+    }
+    // 2,5 loop
+    #{frameToRate(8)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(13)} {
+        opacity: 1;
+    }
+    #{frameToRate(15)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(20)} {
+        opacity: 1;
+    }
+    #{frameToRate(22)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(27)} {
+        opacity: 1;
+    }
+    #{frameToRate(29)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(34)} {
+        opacity: 1;
+    }
+    #{frameToRate(36)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(41)} {
+        opacity: 1;
+    }
+    #{frameToRate(43)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(48)} {
+        opacity: 1;
+    }
+    #{frameToRate(50)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(55)} {
+        opacity: 1;
+    }
+    #{frameToRate(57)} {
+        opacity: 0.5;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+// star_8
+@keyframes star8 {
+    $posX   : 48;
+    $sPosY  : -112;
+    $ePosY  : 608;
+    $width  : 30;
+    $sDegree: 0;
+    $eDegree: 367;
+    $sFrame : 6;
+    $eFrame : 60;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    // 2,4 loop
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+    }
+    #{frameToRate(8)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(10)} {
+        opacity: 1;
+    }
+    #{frameToRate(14)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(16)} {
+        opacity: 1;
+    }
+    #{frameToRate(20)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(22)} {
+        opacity: 1;
+    }
+    #{frameToRate(26)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(28)} {
+        opacity: 1;
+    }
+    #{frameToRate(32)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(34)} {
+        opacity: 1;
+    }
+    #{frameToRate(38)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(40)} {
+        opacity: 1;
+    }
+    #{frameToRate(44)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(46)} {
+        opacity: 1;
+    }
+    #{frameToRate(50)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(52)} {
+        opacity: 1;
+    }
+    #{frameToRate(56)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(58)} {
+        opacity: 1;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+// star_9
+@keyframes star9 {
+    $posX   : 200;
+    $sPosY  : -138;
+    $ePosY  : 538;
+    $width  : 40;
+    $sDegree: 0;
+    $eDegree: 367;
+    $sFrame : 5;
+    $eFrame : 61;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+    }
+    // 2, 3 loop
+    #{frameToRate(8)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(10)} {
+        opacity: 1;
+    }
+    #{frameToRate(12)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(15)} {
+        opacity: 1;
+    }
+    #{frameToRate(17)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(20)} {
+        opacity: 1;
+    }
+    #{frameToRate(22)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(25)} {
+        opacity: 1;
+    }
+    #{frameToRate(27)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(30)} {
+        opacity: 1;
+    }
+    #{frameToRate(32)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(35)} {
+        opacity: 1;
+    }
+    #{frameToRate(37)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(40)} {
+        opacity: 1;
+    }
+    #{frameToRate(42)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(45)} {
+        opacity: 1;
+    }
+    #{frameToRate(47)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(50)} {
+        opacity: 1;
+    }
+    #{frameToRate(52)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(55)} {
+        opacity: 1;
+    }
+    #{frameToRate(57)} {
+        opacity: 0.5;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+// star_10
+@keyframes star10 {
+    $posX   : 774;
+    $sPosY  : -8;
+    $ePosY  : 566;
+    $width  : 50;
+    $sDegree: 0;
+    $eDegree: 367;
+    $sFrame : 44;
+    $eFrame : 99;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    // 2, 2, 5 loop
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate(48)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(50)} {
+        opacity: 1;
+    }
+    #{frameToRate(52)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(54)} {
+        opacity: 1;
+    }
+    #{frameToRate(59)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(61)} {
+        opacity: 1;
+    }
+    #{frameToRate(63)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(65)} {
+        opacity: 1;
+    }
+    #{frameToRate(67)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(69)} {
+        opacity: 1;
+    }
+    #{frameToRate(74)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(76)} {
+        opacity: 1;
+    }
+    #{frameToRate(83)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(85)} {
+        opacity: 1;
+    }
+    #{frameToRate(87)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(89)} {
+        opacity: 1;
+    }
+    #{frameToRate(91)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(93)} {
+        opacity: 1;
+    }
+    #{frameToRate(95)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(97)} {
+        opacity: 1;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+// star_11
+@keyframes star11 {
+    $posX   : 848;
+    $sPosY  : -108;
+    $ePosY  : 612;
+    $width  : 50;
+    $sDegree: 0;
+    $eDegree: 367;
+    $sFrame : 44;
+    $eFrame : 99;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate(87)} {
+        opacity: 1;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+// star_12
+@keyframes star12 {
+    $posX   : 80;
+    $sPosY  : -360;
+    $ePosY  : 363;
+    $width  : 50;
+    $sDegree: 0;
+    $eDegree: 367;
+    $sFrame : 44;
+    $eFrame : 99;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+    }
+    #{frameToRate(87)} {
+        opacity: 1;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+// star_13
+@keyframes star13 {
+    $posX   : 1040;
+    $sPosY  : -56;
+    $ePosY  : 667;
+    $width  : 50;
+    $sDegree: 0;
+    $eDegree: 367;
+    $sFrame : 27;
+    $eFrame : 83;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    // 2 loop
+    #{frameToRate(29)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(31)} {
+        opacity: 1;
+    }
+    #{frameToRate(33)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(35)} {
+        opacity: 1;
+    }
+    #{frameToRate(37)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(39)} {
+        opacity: 1;
+    }
+    #{frameToRate(41)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(43)} {
+        opacity: 1;
+    }
+    #{frameToRate(45)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(47)} {
+        opacity: 1;
+    }
+    #{frameToRate(49)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(51)} {
+        opacity: 1;
+    }
+    #{frameToRate(53)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(55)} {
+        opacity: 1;
+    }
+    #{frameToRate(57)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(59)} {
+        opacity: 1;
+    }
+    #{frameToRate(61)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(63)} {
+        opacity: 1;
+    }
+    #{frameToRate(65)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(67)} {
+        opacity: 1;
+    }
+    #{frameToRate(69)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(71)} {
+        opacity: 1;
+    }
+    #{frameToRate(73)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(75)} {
+        opacity: 1;
+    }
+    #{frameToRate(77)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(79)} {
+        opacity: 1;
+    }
+    #{frameToRate(81)} {
+        opacity: 1;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+
+// star_14
+@keyframes star14 {
+    $posX   : 660;
+    $sPosY  : -164;
+    $ePosY  : 559;
+    $width  : 050;
+    $sDegree: 0;
+    $eDegree: 367;
+    $sFrame : 27;
+    $eFrame : 82;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    // 2, 4 loop
+    #{frameToRate(28)} {
+        opacity: 1;
+    }
+    #{frameToRate(32)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(34)} {
+        opacity: 1;
+    }
+    #{frameToRate(38)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(40)} {
+        opacity: 1;
+    }
+    #{frameToRate(44)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(46)} {
+        opacity: 1;
+    }
+    #{frameToRate(50)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(52)} {
+        opacity: 1;
+    }
+    #{frameToRate(56)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(58)} {
+        opacity: 1;
+    }
+    #{frameToRate(62)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(64)} {
+        opacity: 1;
+    }
+    #{frameToRate(68)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(70)} {
+        opacity: 1;
+    }
+    #{frameToRate(74)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(76)} {
+        opacity: 1;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+
+// star_15
+@keyframes star15 {
+    $posX   : 736;
+    $sPosY  : 1;
+    $ePosY  : 551;
+    $width  : 35;
+    $sDegree: 0;
+    $eDegree: 367;
+    $sFrame : 7;
+    $eFrame : 63;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+    }
+    // 2, 3 loop
+    #{frameToRate(10)} {
+        opacity: 1;
+    }
+    #{frameToRate(12)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(15)} {
+        opacity: 1;
+    }
+    #{frameToRate(17)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(20)} {
+        opacity: 1;
+    }
+    #{frameToRate(22)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(25)} {
+        opacity: 1;
+    }
+    #{frameToRate(27)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(30)} {
+        opacity: 1;
+    }
+    #{frameToRate(32)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(35)} {
+        opacity: 1;
+    }
+    #{frameToRate(37)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(40)} {
+        opacity: 1;
+    }
+    #{frameToRate(42)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(45)} {
+        opacity: 1;
+    }
+    #{frameToRate(47)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(50)} {
+        opacity: 1;
+    }
+    #{frameToRate(52)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(55)} {
+        opacity: 1;
+    }
+    #{frameToRate(57)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(60)} {
+        opacity: 1;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+
+// star_16
+@keyframes star16 {
+    $posX   : 170;
+    $sPosY  : 33;
+    $ePosY  : 555;
+    $width  : 30;
+    $sDegree: 0;
+    $eDegree: 367;
+    $sFrame : 27;
+    $eFrame : 82;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    // 2~ , 3 loop
+    #{frameToRate(29)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(31)} {
+        opacity: 1;
+    }
+    #{frameToRate(33)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(35)} {
+        opacity: 1;
+    }
+    #{frameToRate(37)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(39)} {
+        opacity: 1;
+    }
+    #{frameToRate(42)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(44)} {
+        opacity: 1;
+    }
+    #{frameToRate(46)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(48)} {
+        opacity: 1;
+    }
+    #{frameToRate(50)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(52)} {
+        opacity: 1;
+    }
+    #{frameToRate(55)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(57)} {
+        opacity: 1;
+    }
+    #{frameToRate(59)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(61)} {
+        opacity: 1;
+    }
+    #{frameToRate(63)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(65)} {
+        opacity: 1;
+    }
+    #{frameToRate(68)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(70)} {
+        opacity: 1;
+    }
+    #{frameToRate(72)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(74)} {
+        opacity: 1;
+    }
+    #{frameToRate(76)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(78)} {
+        opacity: 1;
+    }
+
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+
+// star_17
+@keyframes star17 {
+    $posX   : 414;
+    $sPosY  : -506;
+    $ePosY  : 212;
+    $width  : 40;
+    $sDegree: 0;
+    $eDegree: 367;
+    $sFrame : 36;
+    $eFrame : 92;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate(37)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(39)} {
+        opacity: 1;
+    }
+    #{frameToRate(42)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(44)} {
+        opacity: 1;
+    }
+    #{frameToRate(46)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(48)} {
+        opacity: 1;
+    }
+    #{frameToRate(50)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(52)} {
+        opacity: 1;
+    }
+    #{frameToRate(55)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(57)} {
+        opacity: 1;
+    }
+    #{frameToRate(59)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(61)} {
+        opacity: 1;
+    }
+    #{frameToRate(63)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(65)} {
+        opacity: 1;
+    }
+    #{frameToRate(68)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(70)} {
+        opacity: 1;
+    }
+    #{frameToRate(72)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(74)} {
+        opacity: 1;
+    }
+    #{frameToRate(76)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(78)} {
+        opacity: 1;
+    }
+    #{frameToRate(81)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(83)} {
+        opacity: 1;
+    }
+    #{frameToRate(85)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(87)} {
+        opacity: 1;
+    }
+    #{frameToRate(89)} {
+        opacity: 1;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+
+
+// star_18
+@keyframes star18 {
+    $posX   : 368;
+    $sPosY  : -860;
+    $ePosY  : 667;
+    $width  : 30;
+    $sDegree: 0;
+    $eDegree: 367;
+    $sFrame : 36;
+    $eFrame : 91;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate(38)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(40)} {
+        opacity: 1;
+    }
+    #{frameToRate(44)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(46)} {
+        opacity: 1;
+    }
+    #{frameToRate(50)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(52)} {
+        opacity: 1;
+    }
+    #{frameToRate(56)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(58)} {
+        opacity: 1;
+    }
+    #{frameToRate(62)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(64)} {
+        opacity: 1;
+    }
+    #{frameToRate(70)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(72)} {
+        opacity: 1;
+    }
+    #{frameToRate(76)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(78)} {
+        opacity: 1;
+    }
+    #{frameToRate(82)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(86)} {
+        opacity: 1;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+
+
+// star_19
+@keyframes star19 {
+    $posX   : 26;
+    $sPosY  : -990;
+    $ePosY  : 561;
+    $width  : 30;
+    $sDegree: 0;
+    $eDegree: 367;
+    $sFrame : 63;
+    $eFrame : 119;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate(67)} {
+        opacity: 1;
+    }
+    #{frameToRate(77)} {
+        opacity: 1;
+    }
+    #{frameToRate(80)} {
+        opacity: 0;
+    }
+    #{frameToRate(83)} {
+        opacity: 1;
+    }
+    #{frameToRate(93)} {
+        opacity: 1;
+    }
+    #{frameToRate(96)} {
+        opacity: 0;
+    }
+    #{frameToRate(99)} {
+        opacity: 1;
+    }
+    #{frameToRate(111)} {
+        opacity: 1;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+
+
+// star_20
+@keyframes star20 {
+    $posX   : 868;
+    $sPosY  : -200;
+    $ePosY  : 700;
+    $width  : 30;
+    $sDegree: 0;
+    $eDegree: 367;
+    $sFrame : 33;
+    $eFrame : 100;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+    }
+    #{frameToRate(35)} {
+        opacity: 1;
+    }
+    #{frameToRate(37)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(39)} {
+        opacity: 1;
+    }
+    #{frameToRate(41)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(43)} {
+        opacity: 1;
+    }
+    #{frameToRate(45)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(47)} {
+        opacity: 1;
+    }
+    #{frameToRate(49)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(51)} {
+        opacity: 1;
+    }
+    #{frameToRate(53)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(55)} {
+        opacity: 1;
+    }
+    #{frameToRate(57)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(59)} {
+        opacity: 1;
+    }
+    #{frameToRate(61)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(63)} {
+        opacity: 1;
+    }
+    #{frameToRate(65)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(67)} {
+        opacity: 1;
+    }
+    #{frameToRate(69)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(71)} {
+        opacity: 1;
+    }
+    #{frameToRate(73)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(75)} {
+        opacity: 1;
+    }
+    #{frameToRate(77)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(79)} {
+        opacity: 1;
+    }
+    #{frameToRate(81)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(83)} {
+        opacity: 1;
+    }
+    #{frameToRate(85)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(87)} {
+        opacity: 1;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+
+
+// star_21
+@keyframes star21 {
+    $posX   : 282;
+    $sPosY  : -400;
+    $ePosY  : 400;
+    $width  : 50;
+    $sDegree: 0;
+    $eDegree: 367;
+    $sFrame : 43;
+    $eFrame : 99;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+    }
+    #{frameToRate(47)} {
+        opacity: 1;
+    }
+    #{frameToRate(57)} {
+        opacity: 1;
+    }
+    #{frameToRate(60)} {
+        opacity: 0;
+    }
+    #{frameToRate(63)} {
+        opacity: 1;
+    }
+    #{frameToRate(73)} {
+        opacity: 1;
+    }
+    #{frameToRate(76)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(79)} {
+        opacity: 1;
+    }
+    #{frameToRate(91)} {
+        opacity: 1;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+
+
+// star_22
+@keyframes star22 {
+    $posX   : 482;
+    $sPosY  : -900;
+    $ePosY  : 667;
+    $width  : 30;
+    $sDegree: 0;
+    $eDegree: 367;
+    $sFrame : 20;
+    $eFrame : 75;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    // 2 loop
+    #{frameToRate(24)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(27)} {
+        opacity: 1;
+    }
+    #{frameToRate(29)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(31)} {
+        opacity: 1;
+    }
+    #{frameToRate(33)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(35)} {
+        opacity: 1;
+    }
+    #{frameToRate(37)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(39)} {
+        opacity: 1;
+    }
+    #{frameToRate(41)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(43)} {
+        opacity: 1;
+    }
+    #{frameToRate(45)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(47)} {
+        opacity: 1;
+    }
+    #{frameToRate(49)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(51)} {
+        opacity: 1;
+    }
+    #{frameToRate(53)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(55)} {
+        opacity: 1;
+    }
+    #{frameToRate(57)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(59)} {
+        opacity: 1;
+    }
+    #{frameToRate(61)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(63)} {
+        opacity: 1;
+    }
+    #{frameToRate(65)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(67)} {
+        opacity: 1;
+    }
+    #{frameToRate(69)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(71)} {
+        opacity: 1;
+    }
+    #{frameToRate(73)} {
+        opacity: 0.5;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+
+// star_23
+@keyframes star23 {
+    $posX   : 172;
+    $sPosY  : -800;
+    $ePosY  : 559;
+    $width  : 50;
+    $sDegree: 0;
+    $eDegree: 160;
+    $sFrame : 1;
+    $eFrame : 57;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    // 3, 10 loop
+    #{frameToRate(4)} {
+        opacity: 1;
+    }
+    #{frameToRate(7)} {
+        opacity: 0;
+    }
+    #{frameToRate(10)} {
+        opacity: 1;
+    }
+    #{frameToRate(20)} {
+        opacity: 1;
+    }
+    #{frameToRate(23)} {
+        opacity: 0;
+    }
+    #{frameToRate(26)} {
+        opacity: 1;
+    }
+    #{frameToRate(36)} {
+        opacity: 1;
+    }
+    #{frameToRate(39)} {
+        opacity: 0;
+    }
+    #{frameToRate(42)} {
+        opacity: 1;
+    }
+    #{frameToRate(52)} {
+        opacity: 1;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+
+// star_24
+@keyframes star24 {
+    $posX   : 1024;
+    $sPosY  : -1100;
+    $ePosY  : 551;
+    $width  : 30;
+    $sDegree: 0;
+    $eDegree: 160;
+    $sFrame : 30;
+    $eFrame : 85;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate(36)} {
+        opacity: 1;
+    }
+    #{frameToRate(39)} {
+        opacity: 0;
+    }
+    #{frameToRate(42)} {
+        opacity: 1;
+    }
+    #{frameToRate(52)} {
+        opacity: 1;
+    }
+    #{frameToRate(55)} {
+        opacity: 0;
+    }
+    #{frameToRate(58)} {
+        opacity: 1;
+    }
+    #{frameToRate(68)} {
+        opacity: 1;
+    }
+    #{frameToRate(71)} {
+        opacity: 0;
+    }
+    #{frameToRate(74)} {
+        opacity: 1;
+    }
+    #{frameToRate(83)} {
+        opacity: 1;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+
+// star_25
+@keyframes star25 {
+    $posX   : 886;
+    $sPosY  : -500;
+    $ePosY  : 555;
+    $width  : 60;
+    $sDegree: 0;
+    $eDegree: 160;
+    $sFrame : 12;
+    $eFrame : 67;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    // 3, 10 loop
+    #{frameToRate(15)} {
+        opacity: 1;
+    }
+    #{frameToRate(20)} {
+        opacity: 1;
+    }
+    #{frameToRate(23)} {
+        opacity: 0;
+    }
+    #{frameToRate(26)} {
+        opacity: 1;
+    }
+    #{frameToRate(36)} {
+        opacity: 1;
+    }
+    #{frameToRate(39)} {
+        opacity: 0;
+    }
+    #{frameToRate(42)} {
+        opacity: 1;
+    }
+    #{frameToRate(52)} {
+        opacity: 1;
+    }
+    #{frameToRate(55)} {
+        opacity: 0;
+    }
+    #{frameToRate(58)} {
+        opacity: 1;
+    }
+    #{frameToRate(66)} {
+        opacity: 1;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+
+// star_26
+@keyframes star26 {
+    $posX   : 444;
+    $sPosY  : -406;
+    $ePosY  : 700;
+    $width  : 50;
+    $sDegree: 0;
+    $eDegree: 150;
+    $sFrame : 36;
+    $eFrame : 92;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    // 3, 10 loop
+    #{frameToRate(15)} {
+        opacity: 1;
+    }
+    #{frameToRate(20)} {
+        opacity: 1;
+    }
+    #{frameToRate(23)} {
+        opacity: 0;
+    }
+    #{frameToRate(26)} {
+        opacity: 1;
+    }
+    #{frameToRate(36)} {
+        opacity: 1;
+    }
+    #{frameToRate(39)} {
+        opacity: 0;
+    }
+    #{frameToRate(42)} {
+        opacity: 1;
+    }
+    #{frameToRate(52)} {
+        opacity: 1;
+    }
+    #{frameToRate(55)} {
+        opacity: 0;
+    }
+    #{frameToRate(58)} {
+        opacity: 1;
+    }
+    #{frameToRate(66)} {
+        opacity: 1;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+
+
+
+// star_27
+@keyframes star27 {
+    $posX   : 330;
+    $sPosY  : -400;
+    $ePosY  : 600;
+    $width  : 60;
+    $sDegree: 0;
+    $eDegree: 367;
+    $sFrame : 5;
+    $eFrame : 60;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+    }
+    // 3, 10 loop
+    #{frameToRate(10)} {
+        opacity: 1;
+    }
+    #{frameToRate(20)} {
+        opacity: 1;
+    }
+    #{frameToRate(23)} {
+        opacity: 0;
+    }
+    #{frameToRate(26)} {
+        opacity: 1;
+    }
+    #{frameToRate(36)} {
+        opacity: 1;
+    }
+    #{frameToRate(39)} {
+        opacity: 0;
+    }
+    #{frameToRate(42)} {
+        opacity: 1;
+    }
+    #{frameToRate(52)} {
+        opacity: 1;
+    }
+    #{frameToRate(55)} {
+        opacity: 0;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+// star_28
+@keyframes star28 {
+    $posX   : 90;
+    $sPosY  : -112;
+    $ePosY  : 508;
+    $width  : 120;
+    $sDegree: 0;
+    $eDegree: 140;
+    $sFrame : 6;
+    $eFrame : 90;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    // 3, 10 loop
+    #{frameToRate(15)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(28)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(32)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(36)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(39)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(42)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(55)} {
+        opacity: 0.9;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+
+// star_29
+@keyframes star29 {
+    $posX   : 900;
+    $sPosY  : -100;
+    $ePosY  : 600;
+    $width  : 50;
+    $sDegree: 0;
+    $eDegree: 450;
+    $sFrame : 1;
+    $eFrame : 93;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+    }
+    #{frameToRate(5)} {
+        opacity: 1;
+    }
+    #{frameToRate(10)} {
+        opacity: 0;
+    }
+    #{frameToRate(18)} {
+        opacity: 1;
+    }
+    #{frameToRate(31)} {
+        opacity: 1;
+    }
+    #{frameToRate(38)} {
+        opacity: 0;
+    }
+    #{frameToRate(46)} {
+        opacity: 1;
+    }
+    #{frameToRate(59)} {
+        opacity: 1;
+    }
+    #{frameToRate(71)} {
+        opacity: 0;
+    }
+    #{frameToRate(79)} {
+        opacity: 1;
+    }
+    #{frameToRate(87)} {
+        opacity: 1;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+
+
+
+
+
+// star_30
+@keyframes star30 {
+    $posX   : 950;
+    $sPosY  : -100;
+    $ePosY  : 800;
+    $width  : 80;
+    $sDegree: 0;
+    $eDegree: 450;
+    $sFrame : 20;
+    $eFrame : 110;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+    }
+    #{frameToRate(31)} {
+        opacity: 1;
+    }
+    #{frameToRate(38)} {
+        opacity: 0;
+    }
+    #{frameToRate(46)} {
+        opacity: 1;
+    }
+    #{frameToRate(59)} {
+        opacity: 1;
+    }
+    #{frameToRate(71)} {
+        opacity: 0;
+    }
+    #{frameToRate(79)} {
+        opacity: 1;
+    }
+    #{frameToRate(87)} {
+        opacity: 1;
+    }
+    #{frameToRate(97)} {
+        opacity: 0;
+    }
+    #{frameToRate(104)} {
+        opacity: 1;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+
+
+
+// star_31
+@keyframes star31 {
+    $posX   : 305;
+    $sPosY  : -200;
+    $ePosY  : 800;
+    $width  : 40;
+    $sDegree: 0;
+    $eDegree: 450;
+    $sFrame : 3;
+    $eFrame : 93;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+    }
+    #{frameToRate(31)} {
+        opacity: 1;
+    }
+    #{frameToRate(38)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(46)} {
+        opacity: 1;
+    }
+    #{frameToRate(59)} {
+        opacity: 1;
+    }
+    #{frameToRate(71)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(79)} {
+        opacity: 1;
+    }
+    #{frameToRate(87)} {
+        opacity: 1;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+
+// star_32
+@keyframes star32 {
+    $posX   : -250;
+    $sPosY  : -400;
+    $ePosY  : 700;
+    $width  : 180;
+    $sDegree: 0;
+    $eDegree: 150;
+    $sFrame : 0;
+    $eFrame : 90;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate(0deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+    }
+    #{frameToRate(4)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(8)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(12)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(16)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(20)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(24)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(28)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(32)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(36)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(40)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(44)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(48)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(52)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(56)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(60)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(64)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(68)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(72)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(76)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(80)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(84)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(88)} {
+        opacity: 0.9;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+
+// star_33
+@keyframes star33 {
+    $posX   : 780;
+    $sPosY  : -250;
+    $ePosY  : 550;
+    $width  : 150;
+    $sDegree: 50;
+    $eDegree: 340;
+    $sFrame : 40;
+    $eFrame : 120;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate(115)} {
+        opacity: 0.6;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+
+
+// star_34
+@keyframes star34 {
+    $posX   : -100;
+    $sPosY  : -350;
+    $ePosY  : 250;
+    $width  : 150;
+    $sDegree: 50;
+    $eDegree: 130;
+    $sFrame : 0;
+    $eFrame : 110;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate(4)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(8)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(12)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(16)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(20)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(24)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(28)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(32)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(36)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(40)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(44)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(48)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(52)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(56)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(60)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(64)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(68)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(72)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(76)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(80)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(84)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(88)} {
+        opacity: 0.9;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+
+
+// star_35
+@keyframes star35 {
+    $posX   : 814;
+    $sPosY  : -406;
+    $ePosY  : 512;
+    $width  : 40;
+    $sDegree: 0;
+    $eDegree: 367;
+    $sFrame : 36;
+    $eFrame : 92;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate(37)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(39)} {
+        opacity: 1;
+    }
+    #{frameToRate(42)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(44)} {
+        opacity: 1;
+    }
+    #{frameToRate(46)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(48)} {
+        opacity: 1;
+    }
+    #{frameToRate(50)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(52)} {
+        opacity: 1;
+    }
+    #{frameToRate(55)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(57)} {
+        opacity: 1;
+    }
+    #{frameToRate(59)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(61)} {
+        opacity: 1;
+    }
+    #{frameToRate(63)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(65)} {
+        opacity: 1;
+    }
+    #{frameToRate(68)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(70)} {
+        opacity: 1;
+    }
+    #{frameToRate(72)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(74)} {
+        opacity: 1;
+    }
+    #{frameToRate(76)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(78)} {
+        opacity: 1;
+    }
+    #{frameToRate(81)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(83)} {
+        opacity: 1;
+    }
+    #{frameToRate(85)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(87)} {
+        opacity: 1;
+    }
+    #{frameToRate(89)} {
+        opacity: 1;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+
+
+// star_36
+@keyframes star36 {
+    $posX   : 614;
+    $sPosY  : -306;
+    $ePosY  : 512;
+    $width  : 50;
+    $sDegree: 0;
+    $eDegree: 367;
+    $sFrame : 45;
+    $eFrame : 110;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate(46)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(48)} {
+        opacity: 1;
+    }
+    #{frameToRate(50)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(52)} {
+        opacity: 1;
+    }
+    #{frameToRate(55)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(57)} {
+        opacity: 1;
+    }
+    #{frameToRate(59)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(61)} {
+        opacity: 1;
+    }
+    #{frameToRate(63)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(65)} {
+        opacity: 1;
+    }
+    #{frameToRate(68)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(70)} {
+        opacity: 1;
+    }
+    #{frameToRate(72)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(74)} {
+        opacity: 1;
+    }
+    #{frameToRate(76)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(78)} {
+        opacity: 1;
+    }
+    #{frameToRate(81)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(83)} {
+        opacity: 1;
+    }
+    #{frameToRate(85)} {
+        opacity: 0.5;
+    }
+    #{frameToRate(87)} {
+        opacity: 1;
+    }
+    #{frameToRate(89)} {
+        opacity: 1;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+
+
+// star_37
+@keyframes star37 {
+    $posX   : 800;
+    $sPosY  : -350;
+    $ePosY  : 250;
+    $width  : 150;
+    $sDegree: 50;
+    $eDegree: 130;
+    $sFrame : 60;
+    $eFrame : 110;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate(64)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(68)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(72)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(76)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(80)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(84)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(88)} {
+        opacity: 0.9;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
+
+
+
+// star_38
+@keyframes star38 {
+    $posX   : 700;
+    $sPosY  : -350;
+    $ePosY  : 250;
+    $width  : 30;
+    $sDegree: 50;
+    $eDegree: 130;
+    $sFrame : 40;
+    $eFrame : 110;
+    0% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate($sFrame)} {
+        opacity: 0;
+        transform: translateY(toPx($sPosY)) rotate($sDegree+deg);
+    }
+    #{frameToRate(64)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(68)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(72)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(76)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(80)} {
+        opacity: 0.9;
+    }
+    #{frameToRate(84)} {
+        opacity: 0.6;
+    }
+    #{frameToRate(88)} {
+        opacity: 0.9;
+    }
+    #{frameToRate($eFrame)} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: posXRate($posX);
+        width: $width+px;
+        transform: translateY(toPx($ePosY)) rotate($eDegree+deg);
+    }
+}
