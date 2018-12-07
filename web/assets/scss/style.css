@@ -2210,7 +2210,8 @@ Main Page
   30% {
     -webkit-transform: translateY(-7px);
     transform: translateY(-7px); } }
-html {
+.confetti-container {
+  height: 100vh;
   background: #000; }
 
 .confetti-animation {
