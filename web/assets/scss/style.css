@@ -1583,7 +1583,8 @@ Main Page
 .starbucksVisual .visual {
   height: 646px;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  padding: 0; }
   .starbucksVisual .visual .container {
     position: relative;
     height: 100%; }
