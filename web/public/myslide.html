@@ -32,62 +32,59 @@
 <div id="wrap" class="paging-fadeout">
     <div class="paging-gage"></div>
 
-    <div class="kool-slider2">
-        <div class="kool-list">
-            <div class="slide-track">
-                <div class="kool-slide is-current" data-kool-slide="1">
-                    <div class="image image1 init"></div>
-                    <div class="container">
-                        <div class="text">
-                            <h2 class="fadeInUp">Lorem ipsum dolor sit amet, consectetur</h2>
-                            <p class="fadeInUp">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit <br>
-                                Animi blanditiis consequuntur dolores
-                            </p>
-                            <div class="btn btn-detail fadeInUp">
-                                detail
-                            </div>
-                        </div>
-                    </div>
+    <div class="kool-slider">
+        <ul>
+            <li class="slide slide1">
+                <div class="text">
+                    <h2>hello world</h2>
+                    <p>it will be fine. i'm sure. trust you.
                 </div>
-                <div class="kool-slide" data-kool-slide="2">
-                    <div class="image image2"></div>
-                    <div class="container">
-                        <div class="text">
-                            <h2 class="fadeInUp">Lorem ipsum dolor sit amet, consectetur</h2>
-                            <p class="fadeInUp">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit <br>
-                                Animi blanditiis consequuntur dolores
-                            </p>
-                            <div class="btn btn-detail fadeInUp">
-                                detail
-                            </div>
-                        </div>
-                    </div>
+            </li>
+            <li class="slide slide2">
+                <div class="text">
+                    <h2>hello world</h2>
+                    <p>it will be fine. i'm sure. trust you.
                 </div>
-                <div class="kool-slide" data-kool-slide="3">
-                    <div class="image image3"></div>
-                    <div class="container">
-                        <div class="text">
-                            <h2 class="fadeInUp">Lorem ipsum dolor sit amet, consectetur</h2>
-                            <p class="fadeInUp">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit <br>
-                                Animi blanditiis consequuntur dolores
-                            </p>
-                            <div class="btn btn-detail fadeInUp">
-                                detail
-                            </div>
-                        </div>
-                    </div>
+            </li>
+            <li class="slide slide3">
+                <div class="text">
+                    <h2>hello world</h2>
+                    <p>it will be fine. i'm sure. trust you.
                 </div>
-            </div>
+            </li>
+            <li class="slide slide4">
+                <div class="text">
+                    <h2>hello world</h2>
+                    <p>it will be fine. i'm sure. trust you.
+                </div>
+            </li>
+            <li class="slide slide5">
+                <div class="text">
+                    <h2>hello world</h2>
+                    <p>it will be fine. i'm sure. trust you.
+                </div>
+            </li>
+        </ul>
+
+        <div class="controller">
+            <button class="btn btn-prev">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 30 30">
+                    <g fill="none" fill-rule="nonzero">
+                        <circle cx="15" cy="15" r="15" fill="none"/>
+                        <path fill="#000" d="M9.229 15.479l8.603 7.647a.5.5 0 0 1-.664.748L8.17 15.877a.5.5 0 0 1-.022-.733l8.997-8.998a.5.5 0 0 1 .708.708l-8.625 8.625z"/>
+                    </g>
+                </svg>
+            </button>
+            <button class="btn btn-next">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 30 30">
+                    <g fill="none" fill-rule="nonzero">
+                        <circle cx="15" cy="15" r="15" fill="#000" fill-opacity="0"/>
+                        <path fill="#000" d="M19.771 15.479l-8.603 7.647a.5.5 0 0 0 .664.748l8.997-7.997a.5.5 0 0 0 .022-.733l-8.997-8.998a.5.5 0 0 0-.708.708l8.625 8.625z"/>
+                    </g>
+                </svg>
+            </button>
         </div>
-        <div class="pager">
-            <div class="kool-prev kool-arrow" data-direction="prev">prev</div>
-            <div class="kool-next kool-arrow" data-direction="next">next</div>
-        </div>
-        <div class="dots">
-        </div>
+        <div class="dots"></div>
     </div>
 
 
@@ -96,91 +93,83 @@
 <script>
     var kool = {
         init : function () {
-            kool.koolSlide();
+            kool.slider();
         },
-        koolSlide : function () {
+        slider : function () {
+            // slide
+            const slide = $('.slide');
 
-            // scenes
-            var koolSlider = $('.kool-slider2'),
-                koolList = koolSlider.find('.kool-list'),
-                koolTrack = koolSlider.find('.slide-track'),
-                koolSlide = koolList.find('.kool-slide'),
-                koolLength = koolSlide.length,
+            // slide length
+            const slideLength = slide.length;
 
-                // pager
-                pager = $('.kool-prev, .kool-next'),
+            // controller
+            const buttonPrev = $('.btn-prev');
+            const buttonNext = $('.btn-next');
 
-                // currentPage
-                currentPage = 1;
-
-
-            // 기본 로직 실행
-            TweenMax.staggerTo('.kool-slider2 .is-current .fadeInUp', 0.6, {y:0, autoAlpha:1},0.1)
+            // render dots
+            const dots = $('.dots');
             renderDots();
-            onClickDots();
+            const dot = $('.dot');
 
-            // resize 혹은 반응형 사이즈 대응
-            $(window).on('load resize', function () {
-                setSize();
+            // initialize
+            let currentSlideIndex = 0;
+            handleSlide(currentSlideIndex);
+            handleDots();
+
+
+            function beforeChange() {
+
+            }
+
+            // handle next
+            buttonNext.on('click', () => {
+                beforeChange();
+                currentSlideIndex = currentSlideIndex + 1;
+                if(currentSlideIndex >= slideLength){
+                    currentSlideIndex = 0;
+                }
+                handleSlide(currentSlideIndex);
+
             })
 
-
-            pager.on('click', _.throttle(function () {
-                var self = $(this),
-                    dataDirection = self.data('direction')
-
-                if(dataDirection === "prev"){
-                    if(currentPage > 1){
-                        currentPage--
-                        handlePage(currentPage)
-                    }
-                } else {
-                    if(currentPage < koolLength){
-                        currentPage++
-                        handlePage(currentPage)
-                    }
+            // handle prev
+            buttonPrev.on('click', () => {
+                beforeChange();
+                currentSlideIndex = currentSlideIndex - 1;
+                if(currentSlideIndex < 0){
+                    currentSlideIndex = 4;
                 }
-            }, 500))
+                handleSlide(currentSlideIndex);
+            })
 
-
-            // set base slide size
-            function setSize() {
-                var windowWidth = $(window).width();
-                koolTrack.css({width: windowWidth * 3});
-                koolSlide.css({width: windowWidth});
+            // handle slide index
+            function handleSlide(currentSlideIndex){
+                active(slide);
+                active(dot);
+                $('.slidepg').html(currentSlideIndex);
             }
 
-            // page 의 인덱스에 모든 디펜던시를 걸고 로직을짠다.
-            function handlePage(page){
-                currentPage = page;
-                $('.kool-slide').removeClass('is-current');
-                $('[data-kool-slide="' + currentPage  + '"]').addClass('is-current');
-                $('.dot-item').removeClass('is-active');
-                $('[data-dot-index="' + currentPage  + '"]').addClass('is-active');
-
-                var timeline = new TimelineMax();
-                timeline
-                    .staggerTo($(".kool-slide").not(".is-current").find('.fadeInUp'), 0.6, {y:40, autoAlpha:0},0.1)
-                    .to(koolList, 1,{x:  -(currentPage - 1) * 100 + "%"})
-                    .staggerTo($(".kool-slide.is-current").find('.fadeInUp'), 0.6, {y:0, autoAlpha:1}, 0.1)
+            // handle class active
+            function active(el){
+                el.eq(currentSlideIndex).addClass('is-active').siblings().removeClass('is-active');
             }
 
-            // render dot button
-            function renderDots() {
-                for(var i = 0; i < koolLength; i++){
-                    $('.dots').append('<span class="dot-item" data-dot-index="' + ( i + 1 )  + '"></span>');
+            // render dots
+            function renderDots(){
+                let renderDots = [];
+                for(var i=0; i < slideLength; i++){
+                    renderDots.push('<div class="dot"></div>')
                 }
-                $('.dots .dot-item').first().addClass('is-active');
+                dots.html(renderDots);
             }
 
-            // handle dot button
-            function onClickDots() {
-                $('.dot-item').on('click', _.throttle(function () {
-                    var self = $(this),
-                        dataIndex = self.data('dotIndex');
-
-                    handlePage(dataIndex)
-                }, 500))
+            // handle dots
+            function handleDots() {
+                dot.on('click', function(){
+                    const thisIndex = $(this).index();
+                    currentSlideIndex = thisIndex;
+                    handleSlide(currentSlideIndex);
+                })
             }
         }
     }

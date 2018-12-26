@@ -1,283 +1,119 @@
 .kool-slider {
-  .kool-list {
-    overflow: hidden;
-    position: relative;
-    height: 100vh;
-    .kool-slide {
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 100vh;
-      width: 100%;
-      overflow: hidden;
-      &.slick-current {
-        .image {
-          @include scale(1);
-        }
-      }
-      .image {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: 50% 50% /cover no-repeat;
-        @include scale(1.3);
-        -webkit-transition: all 2s 1s;
-        -ms-transition: all 2s 1s;
-        transition: all 2s 1s;
+  position: relative;
+  height: 100vh;
 
-        -webkit-transform-origin: 50% 50%;
-        -moz-transform-origin: 50% 50%;
-        -ms-transform-origin: 50% 50%;
-        -o-transform-origin: 50% 50%;
-        transform-origin: 50% 50%;
-        &:before {
-          content:'';
-          @include overlay(.5);
-        }
-        &.init {
-          -webkit-transform: scale(1.3)!important;
-          -ms-transform: scale(1.3)!important;
-          transform: scale(1.3)!important;
-        }
-        &.image1 {
-          background-image: url(https://images.unsplash.com/photo-1504892612018-159ffa1d147f?auto=format&fit=crop&w=2550&q=80);
-        }
-        &.image2 {
-          background-image: url(https://images.unsplash.com/uploads/1412231250505b65c703c/1fa14fb0?auto=format&fit=crop&w=2550&q=80);
-        }
-        &.image3 {
-          background-image: url(https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1652&q=80);
-        }
-      }
-
-      .text {
-        position: absolute;
-        z-index: 500;
-
-        left: 50%;
-        top: 50%;
-        -webkit-transform: translate(-50%,-50%);
-        -ms-transform: translate(-50%,-50%);
-        transform: translate(-50%,-50%);
-        .fadeInUp {
-          transform:translateY(40px);
-          opacity: 0;
-        }
-        h2 {
-          color: #fff;
-          font-size: 35px;
-          margin-bottom: 10px;
-        }
-        p {
-          color: #fff;
-          font-size: 18px;
-        }
-        .btn-detail {
-          border: 1px solid #fff;
-          color: #fff;
-          padding: 10px 30px;
-          margin-top: 30px;
-        }
-      }
-    }
-  }
-
-  .pager {
-    .kool-arrow {
-      position: absolute;
-      top: calc(50% - 50px);
-      padding: 10px 30px;
-      background: rgba(0, 0, 0, 0.55);
-      color: #fff;
-      font-size: 20px;
-      cursor: pointer;
-      text-transform: uppercase;
-      font-size: 14px;
-    }
-    .kool-prev {
-      left: 2%;
-    }
-    .kool-next {
-      right: 2%;
-    }
-  }
-
-  .dots {
-    position: absolute;
-    bottom: 6%;
-    text-align: center;
-    left: 0;
-    right: 0;
-    .dot-item {
-      display: inline-block;
-      margin: 0 7px;
-      width: 15px;
-      height: 15px;
-      padding: 0;
-      background: transparent;
-      text-indent: -99999em;
-      font-size: 0;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      border-radius: 50%;
-      border: 3px solid #ffffff;
-      cursor: pointer;
-      &.is-active {
-        background: #ffffff;
-      }
-      .stop {
-        display: inline-block;
-        width: 12px;
-        height: 12px;
-        margin: 0 5px;
-        background: url("http://kookoo.dothome.co.kr/image/top_banner_play_stop.png")
-        no-repeat 0 0;
-      }
-      .play {
-        background-position: 0 -12px;
-      }
-    }
-  }
-}
-
-
-.kool-slider2 {
-  overflow: hidden;
-  .kool-list {
-    position: relative;
+  .slide {
+    transition: 0.4s;
+    background: 50% 50% / cover no-repeat;
     height: 100vh;
     width: 100%;
-
-    .kool-slide {
-      position: relative;
-      float: left;
-      height: 100vh;
-      overflow: hidden;
-      &.slick-current {
-        .image {
-          @include scale(1);
-        }
-      }
-      .image {
-        width: 100%;
-        height: 100%;
-        background: 50% 50% /cover no-repeat;
-        @include scale(1.3);
-        -webkit-transition: all 2s 1s;
-        -ms-transition: all 2s 1s;
-        transition: all 2s 1s;
-
-        -webkit-transform-origin: 50% 50%;
-        -moz-transform-origin: 50% 50%;
-        -ms-transform-origin: 50% 50%;
-        -o-transform-origin: 50% 50%;
-        transform-origin: 50% 50%;
-        &:before {
-          content:'';
-          @include overlay(.5);
-        }
-        &.init {
-          -webkit-transform: scale(1.3)!important;
-          -ms-transform: scale(1.3)!important;
-          transform: scale(1.3)!important;
-        }
-        &.image1 {
-          background-image: url(https://images.unsplash.com/photo-1504892612018-159ffa1d147f?auto=format&fit=crop&w=2550&q=80);
-        }
-        &.image2 {
-          background-image: url(https://images.unsplash.com/uploads/1412231250505b65c703c/1fa14fb0?auto=format&fit=crop&w=2550&q=80);
-        }
-        &.image3 {
-          background-image: url(https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1652&q=80);
-        }
-      }
-
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transform: translateX(-60px);
+    &.slide1 {
+      background-image: url(https://images.unsplash.com/photo-1511898290398-cee3038fa7a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80);
+    }
+    &.slide2 {
+      background-image: url(https://images.unsplash.com/photo-1517867065801-e20f409696b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+    }
+    &.slide3 {
+      background-image: url(https://images.unsplash.com/photo-1496602910407-bacda74a0fe4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+    }
+    &.slide4 {
+      background-image: url(https://images.unsplash.com/photo-1488116438332-30c57aca5d9d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+    }
+    &.slide5 {
+      background-image: url(https://images.unsplash.com/photo-1446597152631-22e3f57785ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+    }
+    &.is-active {
+      opacity: 1;
+      color: #08c;
+      transform: none;
       .text {
-        position: absolute;
-        z-index: 500;
-
-        left: 50%;
-        top: 50%;
-        -webkit-transform: translate(-50%,-50%);
-        -ms-transform: translate(-50%,-50%);
-        transform: translate(-50%,-50%);
-        .fadeInUp {
-          transform:translateY(40px);
-          opacity: 0;
-        }
         h2 {
-          color: #fff;
-          font-size: 35px;
-          margin-bottom: 10px;
+          transform: none;
+          opacity: 1;
+          transition-delay: 0.4s;
         }
         p {
-          color: #fff;
-          font-size: 18px;
+          transform: none;
+          opacity: 1;
+          transition-delay: 0.5s;
         }
-        .btn-detail {
-          border: 1px solid #fff;
-          color: #fff;
-          padding: 10px 30px;
-          margin-top: 30px;
-        }
+      }
+    }
+
+    .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      text-transform: uppercase;
+      transform: translate(-50%, -50%);
+      h2 {
+        font-size: 76px;
+        color: #fff;
+        transform: translateY(40px);
+        opacity: 0;
+        transition: 0.6s;
+      }
+      p {
+        font-size: 35px;
+        color: #fff;
+        transform: translateY(40px);
+        opacity: 0;
+        transition: 0.7s;
       }
     }
   }
 
-  .pager {
-    .kool-arrow {
-      position: absolute;
-      top: calc(50% - 50px);
-      padding: 10px 30px;
-      background: rgba(0, 0, 0, 0.55);
-      color: #fff;
-      font-size: 20px;
-      cursor: pointer;
-      text-transform: uppercase;
-      font-size: 14px;
+  .btn {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    width: 100px;
+    opacity: 0.4;
+    &:hover {
+      opacity: 1;
     }
-    .kool-prev {
-      left: 2%;
+    &:focus {
+      outline: 0;
     }
-    .kool-next {
-      right: 2%;
+    &.btn-prev {
+      left: 50px;
+    }
+    &.btn-next {
+      right: 50px;
     }
   }
+
 
   .dots {
     position: absolute;
-    bottom: 6%;
-    text-align: center;
-    left: 0;
-    right: 0;
-    .dot-item {
-      display: inline-block;
-      margin: 0 7px;
-      width: 15px;
-      height: 15px;
-      padding: 0;
-      background: transparent;
-      text-indent: -99999em;
-      font-size: 0;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      border-radius: 50%;
-      border: 3px solid #ffffff;
+    left: 50%;
+    bottom: 30px;
+    .dot {
       cursor: pointer;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.25);
+      margin: 10px 8px;
+      display: inline-block;
+      transition: 0.4s;
       &.is-active {
-        background: #ffffff;
-      }
-      .stop {
-        display: inline-block;
-        width: 12px;
-        height: 12px;
-        margin: 0 5px;
-        background: url("http://kookoo.dothome.co.kr/image/top_banner_play_stop.png")
-        no-repeat 0 0;
-      }
-      .play {
-        background-position: 0 -12px;
+        background-color: #fff;
+        border: 2px solid #ff5252;
+        opacity: 0.8;
       }
     }
   }
+
+
+
 }
+
