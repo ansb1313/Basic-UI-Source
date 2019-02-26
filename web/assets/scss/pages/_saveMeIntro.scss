@@ -1,0 +1,391 @@
+// Set a rem font size with pixel
+@function pxToRem($size) {
+    $remSize: $size / 48;
+    @return $remSize * 1rem;
+}
+
+// Set vh font size for landscape mode
+@function toVh($size) {
+    $vhSize: $size / 1080 * 100;
+    @return $vhSize * 1vh;
+}
+
+.BgBasic {
+    background: #000 0 0 / cover no-repeat;
+    animation: BgBasic 5s linear infinite;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+@keyframes BgBasic {
+    0% {
+        background-image: url("../img/anim/bg/bg-basic3.png");
+    }
+    70% {
+        background-image: url("../img/anim/bg/bg-basic3.png");
+    }
+    70% {
+        background-image: url("../img/anim/bg/bg-basic3.png");
+    }
+    71% {
+        background-image: url("../img/anim/bg/bg-basic3.png");
+    }
+    71% {
+        background-image: url("../img/anim/bg/bg-basic0.png");
+    }
+    81% {
+        background-image: url("../img/anim/bg/bg-basic0.png");
+    }
+    81% {
+        background-image: url("../img/anim/bg/bg-basic3.png");
+    }
+    82% {
+        background-image: url("../img/anim/bg/bg-basic3.png");
+    }
+    82% {
+        background-image: url("../img/anim/bg/bg-basic0.png");
+    }
+    84% {
+        background-image: url("../img/anim/bg/bg-basic0.png");
+    }
+    84% {
+        background-image: url("../img/anim/bg/bg-basic3.png");
+    }
+    100% {
+        background-image: url("../img/anim/bg/bg-basic3.png");
+    }
+}
+
+.nct-intro-wrap {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+// VIEW BG GLITCH
+$view-glitch-imageFileWidth: 4000;
+$view-glitch-bgSizeWidth: $view-glitch-imageFileWidth / 10;
+$view-glitch-steps: 5;
+$view-glitch-duration: 3s;
+$view-glitch-containerSize: $view-glitch-bgSizeWidth / $view-glitch-steps;
+
+.view-glitch {
+    margin-top: 20vh;
+    height: 40vh;
+    width: #{$view-glitch-containerSize}vh;
+    background: url("../img/anim/glitch.png") 0 50% / #{$view-glitch-bgSizeWidth}vh auto no-repeat;
+    animation: view-glitchTitle $view-glitch-duration steps($view-glitch-steps) infinite;
+}
+@keyframes view-glitchTitle {
+    100% {
+        background-position: -#{$view-glitch-bgSizeWidth}vh;
+    }
+}
+
+.NctIntro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1000;
+    padding-bottom: 6vh;
+    @include screen-xs {
+        padding-bottom: 20vh;
+    }
+    .intro-content {
+        width: 100%;
+        text-align: center;
+        .slogan {
+            position: relative;
+            > div {
+                transition: .4s;
+                padding: 0 10px;
+            }
+            .group2 {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+            }
+            &.text1 {
+                .group1 {
+                    opacity: 1;
+                }
+                .group2 {
+                    opacity: 0;
+                }
+            }
+            &.text2 {
+                .group1 {
+                    opacity: 0;
+                }
+                .group2 {
+                    opacity: 1;
+                }
+            }
+        }
+        h2 {
+            text-transform: uppercase;
+            font-weight: 400;
+            color: #e2ff00;
+            font-size: toVh(36);
+            margin: 0 0 pxToRem(15);
+            line-height: 1.2;
+            @include screen-xs {
+                font-size: 10px;
+                margin-bottom: pxToRem(6);
+            }
+        }
+        p {
+            font-size: 4vh;
+            color: #fff;
+            opacity: .6;
+            line-height: 1.1;
+        }
+    }
+    .rec {
+        position: absolute;
+        top: toVh(52);
+        left: toVh(42);
+        font-size: pxToRem(33);
+        color: #fff;
+        opacity: .4;
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #fff;
+            margin-right: 4px;
+            margin-top: 1px;
+            animation: alphaDot 1s infinite;
+        }
+        .time {
+            font-size: pxToRem(33);
+            font-weight: 400;
+            margin-left: 3px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            top: 1px;
+            span {
+                animation: alphaDot 1s infinite;
+            }
+        }
+    }
+    .intro-loading {
+        position: absolute;
+        left: toVh(42);
+        bottom: toVh(45);
+        .ch {
+            font-size: pxToRem(30);
+            color: rgba(255, 255, 255, 0.6);
+            display: flex;
+            align-items: center;
+            margin-bottom: 2px;
+            .bar {
+                height: toVh(12);
+                width: toVh(100);
+                background: #333;
+                margin-left: 3px;
+                .bar-inner {
+                    height: toVh(12);
+                    width: toVh(0);
+                    background: #fff;
+                    animation: equalize 4s 0s infinite;
+                    &.delay {
+                        animation-delay: -1.9s;
+                    }
+                }
+            }
+        }
+    }
+    .etc {
+        position: absolute;
+        right: toVh(42);
+        bottom: toVh(45);
+        color: #fff;
+        opacity: .5;
+        font-size: 3vh;
+        line-height: 1.2;
+    }
+}
+
+@keyframes alphaDot {
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes equalize {
+    0% {
+        width: toVh(60);
+    }
+    4% {
+        width: toVh(50);
+    }
+    8% {
+        width: toVh(40);
+    }
+    12% {
+        width: toVh(30);
+    }
+    16% {
+        width: toVh(20);
+    }
+    20% {
+        width: toVh(30);
+    }
+    24% {
+        width: toVh(40);
+    }
+    28% {
+        width: toVh(10);
+    }
+    32% {
+        width: toVh(40);
+    }
+    36% {
+        width: toVh(70);
+    }
+    40% {
+        width: toVh(20);
+    }
+    44% {
+        width: toVh(40);
+    }
+    48% {
+        width: toVh(70);
+    }
+    52% {
+        width: toVh(30);
+    }
+    56% {
+        width: toVh(10);
+    }
+    60% {
+        width: toVh(30);
+    }
+    64% {
+        width: toVh(50);
+    }
+    68% {
+        width: toVh(60);
+    }
+    72% {
+        width: toVh(80);
+    }
+    76% {
+        width: toVh(100);
+    }
+    80% {
+        width: toVh(90);
+    }
+    84% {
+        width: toVh(60);
+    }
+    88% {
+        width: toVh(50);
+    }
+    92% {
+        width: toVh(60);
+    }
+    96% {
+        width: toVh(80);
+    }
+    100% {
+        width: toVh(100);
+    }
+}
+
+
+
+// LOGO GLITCH
+$logo-imageFileWidth: 3200;
+$logo-bgSizeWidth: $logo-imageFileWidth / 10;
+$logo-steps: 4;
+$logo-duration: 0.4s;
+$logo-loopFrameCount: 2;
+$logo-loopFrameDuration: $logo-loopFrameCount * 0.25s;
+$logo-loopStartPosition: $logo-bgSizeWidth - ($logo-bgSizeWidth / $logo-steps * $logo-loopFrameCount);
+$logo-containerSize: $logo-bgSizeWidth / $logo-steps;
+
+.intro-logo.glitch1 {
+    height: 35vh;
+    width: #{$logo-containerSize}vh;
+    margin: 0 auto;
+    background: url("../img/anim/title.png") 0 50% / #{$logo-bgSizeWidth}vh auto no-repeat;
+    animation: logoTitle1 $logo-duration steps($logo-steps) infinite, logoTitleLoop1 4.6s $logo-duration infinite;
+}
+@keyframes logoTitle1 {
+    100% {
+        background-position: -#{$logo-bgSizeWidth}vh;
+    }
+}
+@keyframes logoTitleLoop1 {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: 0;
+    }
+}
+
+
+.intro-logo.glitch2 {
+    height: 35vh;
+    width: #{$logo-containerSize}vh;
+    margin: 0 auto;
+    background: url("../img/anim/title.png") 0 50% / #{$logo-bgSizeWidth}vh auto no-repeat;
+    animation: logoTitle2 $logo-duration steps($logo-steps) infinite, logoTitleLoop2 4.6s $logo-duration infinite;
+}
+@keyframes logoTitle2 {
+    100% {
+        background-position: -#{$logo-bgSizeWidth}vh;
+    }
+}
+@keyframes logoTitleLoop2 {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: 0;
+    }
+}
+
+
+
+// LOADING GLITCH
+$loading-imageFileWidth: 4400;
+$loading-bgSizeWidth: $loading-imageFileWidth / 10;
+$loading-steps: 21;
+$loading-duration: 2s;
+$loading-containerSize: $loading-bgSizeWidth / $loading-steps;
+
+.intro-loading .txt {
+    height: 6vh;
+    width: #{$loading-containerSize}vh;
+    margin: 0;
+    background: url("../img/anim/loading.png") 0 50% / #{$loading-bgSizeWidth}vh auto no-repeat;
+    animation: loadingTitle $loading-duration steps($loading-steps) infinite;
+}
+@keyframes loadingTitle {
+    100% {
+        background-position: -#{$loading-bgSizeWidth}vh;
+    }
+}

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <title>star</title>
+
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- google material icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link rel="stylesheet" href="../assets/scss/style.css?v=css_ver2">
+    <script src="../assets/js/lib/jquery-1.12.2.min.js"></script>
+    <!--[if lt IE 9]-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.js"></script>
+    <!--[end if]-->
+</head>
+<body>
+<div class="title-group">
+    <div class="title-poll"></div>
+    <div class="title-fail"></div>
+    <div class="title-final"></div>
+    <div class="title-pass"></div>
+    <div class="title-question"></div>
+    <div class="title-result"></div>
+    <div class="title-game-fail"></div>
+    <div class="title-escape"></div>
+    <div class="time-glitch">
+        <div class="number">
+            <span class="m-number"></span>
+            <span class="dot">.</span>
+            <span class="s-number"></span>
+        </div>
+        <div class="title-timeover"></div>
+    </div>
+</div>
+
+
+<script>
+
+    let subCount = 0;
+    let countdown = 5;
+    
+
+    function counting() {
+        if(subCount > 0){
+            subCount = subCount - 1;
+            $('.s-number').html(subCount);
+            setTimeout(() => {
+                counting()
+            }, 100)
+        } else {
+            if(countdown > 0) {
+                countdown = countdown -1;
+                subCount = 9;
+                console.log("@@@@@ countdown", countdown);
+                $('.m-number').html(countdown);
+                counting();
+            } else {
+                subCount = 0;
+                $('.time-glitch').addClass('timeover');
+            }
+        }
+    }
+    counting();
+</script>
+</body>
+</html>

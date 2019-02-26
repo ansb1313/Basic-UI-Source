@@ -1,0 +1,361 @@
+.title-group {
+    background: url(../img/anim/bg/bg-basic0.png) 0 0 / cover no-repeat;
+}
+
+// POLL
+$poll-imageFileWidth: 7000;
+$poll-bgSizeWidth: $poll-imageFileWidth / 10;
+$poll-steps: 20;
+$poll-duration: 1.5s;
+$poll-loopFrameCount: 2;
+$poll-loopFrameDuration: $poll-loopFrameCount * 0.25s;
+$poll-loopStartPosition: $poll-bgSizeWidth - ($poll-bgSizeWidth / $poll-steps * $poll-loopFrameCount);
+$poll-containerSize: $poll-bgSizeWidth / $poll-steps;
+
+.title-poll {
+    height: 14vh;
+    width: #{$poll-containerSize}vh;
+    margin: 6vh 0 0 -1vh;
+    background: url("../img/anim/title-poll.png") 0 50% / #{$poll-bgSizeWidth}vh auto no-repeat;
+    animation: pollTitle $poll-duration steps($poll-steps) forwards, pollTitleLoop $poll-loopFrameDuration $poll-duration steps($poll-loopFrameCount) infinite;
+}
+@keyframes pollTitle {
+    100% {
+        background-position: -#{$poll-bgSizeWidth}vh;
+    }
+}
+@keyframes pollTitleLoop {
+    0% {
+        background-position: -#{$poll-loopStartPosition}vh;
+    }
+    100% {
+        background-position: -#{$poll-bgSizeWidth}vh;
+    }
+}
+
+
+// FAIL
+$fail-imageFileWidth: 3000;
+$fail-bgSizeWidth: $fail-imageFileWidth / 10;
+$fail-steps: 16;
+$fail-duration: 2s;
+$fail-loopFrameCount: 2;
+$fail-loopFrameDuration: $fail-loopFrameCount * 0.25s;
+$fail-loopStartPosition: $fail-bgSizeWidth - ($fail-bgSizeWidth / $fail-steps * $fail-loopFrameCount);
+$fail-containerSize: $fail-bgSizeWidth / $fail-steps;
+
+.title-fail {
+    height: 6vh;
+    width: #{$fail-containerSize}vh;
+    margin: 0 0 0 -2vh;
+    background: url("../img/anim/title-fail.png") 0 50% / #{$fail-bgSizeWidth}vh auto no-repeat;
+    animation: failTitle $fail-duration steps($fail-steps) forwards, failTitleLoop $fail-loopFrameDuration $fail-duration steps($fail-loopFrameCount) infinite;
+}
+@keyframes failTitle {
+    100% {
+        background-position: -#{$fail-bgSizeWidth}vh;
+    }
+}
+@keyframes failTitleLoop {
+    0% {
+        background-position: -#{$fail-loopStartPosition}vh;
+    }
+    100% {
+        background-position: -#{$fail-bgSizeWidth}vh;
+    }
+}
+
+
+
+// FINAL
+$final-imageFileWidth: 7650;
+$final-bgSizeWidth: $final-imageFileWidth / 10;
+$final-steps: 17;
+$final-duration: 2s;
+$final-loopFrameCount: 2;
+$final-loopFrameDuration: $final-loopFrameCount * 0.25s;
+$final-loopStartPosition: $final-bgSizeWidth - ($final-bgSizeWidth / $final-steps * $final-loopFrameCount);
+$final-containerSize: $final-bgSizeWidth / $final-steps;
+
+.title-final {
+    margin-left: -2vh;
+    height: 14vh;
+    width: #{$final-containerSize}vh;
+    background: url("../img/anim/title-final.png") 0 50% / #{$final-bgSizeWidth}vh auto no-repeat;
+    animation: finalTitle $final-duration steps($final-steps) forwards, finalTitleLoop $final-loopFrameDuration $final-duration steps($final-loopFrameCount) infinite;
+}
+@keyframes finalTitle {
+    100% {
+        background-position: -#{$final-bgSizeWidth}vh;
+    }
+}
+@keyframes finalTitleLoop {
+    0% {
+        background-position: -#{$final-loopStartPosition}vh;
+    }
+    100% {
+        background-position: -#{$final-bgSizeWidth}vh;
+    }
+}
+
+
+// PASS
+$pass-imageFileWidth: 2900;
+$pass-bgSizeWidth: $pass-imageFileWidth / 10;
+$pass-steps: 16;
+$pass-duration: 2s;
+$pass-loopFrameCount: 2;
+$pass-loopFrameDuration: $pass-loopFrameCount * 0.25s;
+$pass-loopStartPosition: $pass-bgSizeWidth - ($pass-bgSizeWidth / $pass-steps * $pass-loopFrameCount);
+$pass-containerSize: $pass-bgSizeWidth / $pass-steps;
+
+.title-pass {
+    height: 6vh;
+    width: #{$pass-containerSize}vh;
+    margin: 0 0 0 -2vh;
+    background: url("../img/anim/title-pass.png") 0 50% / #{$pass-bgSizeWidth}vh auto no-repeat;
+    animation: passTitle $pass-duration steps($pass-steps) forwards, passTitleLoop $pass-loopFrameDuration $pass-duration steps($pass-loopFrameCount) infinite;
+}
+@keyframes passTitle {
+    100% {
+        background-position: -#{$pass-bgSizeWidth}vh;
+    }
+}
+@keyframes passTitleLoop {
+    0% {
+        background-position: -#{$pass-loopStartPosition}vh;
+    }
+    100% {
+        background-position: -#{$pass-bgSizeWidth}vh;
+    }
+}
+
+
+// QUESTION
+$question-imageFileWidth: 4800;
+$question-bgSizeWidth: $question-imageFileWidth / 10;
+$question-steps: 15;
+$question-duration: 2s;
+$question-loopFrameCount: 2;
+$question-loopFrameDuration: $question-loopFrameCount * 0.25s;
+$question-loopStartPosition: $question-bgSizeWidth - ($question-bgSizeWidth / $question-steps * $question-loopFrameCount);
+$question-containerSize: $question-bgSizeWidth / $question-steps;
+
+.title-question {
+    height: 8vh;
+    width: #{$question-containerSize}vh;
+    margin: 2vh 0 0 -1vh;
+    background: url("../img/anim/title-question.png") 0 50% / #{$question-bgSizeWidth}vh auto no-repeat;
+    animation: questionTitle $question-duration steps($question-steps) forwards, questionTitleLoop $question-loopFrameDuration $question-duration steps($question-loopFrameCount) infinite;
+}
+@keyframes questionTitle {
+    100% {
+        background-position: -#{$question-bgSizeWidth}vh;
+    }
+}
+@keyframes questionTitleLoop {
+    0% {
+        background-position: -#{$question-loopStartPosition}vh;
+    }
+    100% {
+        background-position: -#{$question-bgSizeWidth}vh;
+    }
+}
+
+
+
+
+// RESULT
+$result-imageFileWidth: 6400;
+$result-bgSizeWidth: $result-imageFileWidth / 10;
+$result-steps: 20;
+$result-duration: 2s;
+$result-loopFrameCount: 2;
+$result-loopFrameDuration: $result-loopFrameCount * 0.25s;
+$result-loopStartPosition: $result-bgSizeWidth - ($result-bgSizeWidth / $result-steps * $result-loopFrameCount);
+$result-containerSize: $result-bgSizeWidth / $result-steps;
+
+.title-result {
+    height: 6vh;
+    width: #{$result-containerSize}vh;
+    margin-left: -3vh;
+    background: url("../img/anim/title-result.png") 0 50% / #{$result-bgSizeWidth}vh auto no-repeat;
+    animation: resultTitle $result-duration steps($result-steps) forwards, resultTitleLoop $result-loopFrameDuration $result-duration steps($result-loopFrameCount) infinite;
+}
+@keyframes resultTitle {
+    100% {
+        background-position: -#{$result-bgSizeWidth}vh;
+    }
+}
+@keyframes resultTitleLoop {
+    0% {
+        background-position: -#{$result-loopStartPosition}vh;
+    }
+    100% {
+        background-position: -#{$result-bgSizeWidth}vh;
+    }
+}
+
+
+// GAME FAIL
+$game-fail-imageFileWidth: 11500;
+$game-fail-bgSizeWidth: $game-fail-imageFileWidth / 10;
+$game-fail-steps: 23;
+$game-fail-duration: 2s;
+$game-fail-loopFrameCount: 2;
+$game-fail-loopFrameDuration: $game-fail-loopFrameCount * 0.25s;
+$game-fail-loopStartPosition: $game-fail-bgSizeWidth - ($game-fail-bgSizeWidth / $game-fail-steps * $game-fail-loopFrameCount);
+$game-fail-containerSize: $game-fail-bgSizeWidth / $game-fail-steps;
+
+.title-game-fail {
+    height: 14vh;
+    width: #{$game-fail-containerSize}vh;
+    background: url("../img/anim/title-game-fail.png") 0 50% / #{$game-fail-bgSizeWidth}vh auto no-repeat;
+    animation: game-failTitle $game-fail-duration steps($game-fail-steps) forwards, game-failTitleLoop $game-fail-loopFrameDuration $game-fail-duration steps($game-fail-loopFrameCount) infinite;
+}
+@keyframes game-failTitle {
+    100% {
+        background-position: -#{$game-fail-bgSizeWidth}vh;
+    }
+}
+@keyframes game-failTitleLoop {
+    0% {
+        background-position: -#{$game-fail-loopStartPosition}vh;
+    }
+    100% {
+        background-position: -#{$game-fail-bgSizeWidth}vh;
+    }
+}
+
+
+
+// GAME ESCAPE
+$escape-imageFileWidth: 9000;
+$escape-bgSizeWidth: $escape-imageFileWidth / 10;
+$escape-steps: 18;
+$escape-duration: 2s;
+$escape-loopFrameCount: 4;
+$escape-loopFrameDuration: $escape-loopFrameCount * 0.25s;
+$escape-loopStartPosition: $escape-bgSizeWidth - ($escape-bgSizeWidth / $escape-steps * $escape-loopFrameCount);
+$escape-containerSize: $escape-bgSizeWidth / $escape-steps;
+
+.title-escape {
+    height: 15vh;
+    width: #{$escape-containerSize}vh;
+    background: url("../img/anim/title-end-escape.png") 0 50% / #{$escape-bgSizeWidth}vh auto no-repeat;
+    animation: game-clearTitle $escape-duration steps($escape-steps) forwards, game-clearTitleLoop $escape-loopFrameDuration $escape-duration steps($escape-loopFrameCount) infinite;
+}
+@keyframes game-clearTitle {
+    100% {
+        background-position: -#{$escape-bgSizeWidth}vh;
+    }
+}
+@keyframes game-clearTitleLoop {
+    0% {
+        background-position: -#{$escape-loopStartPosition}vh;
+    }
+    100% {
+        background-position: -#{$escape-bgSizeWidth}vh;
+    }
+}
+
+
+
+// TIME BG GLITCH
+$time-glitch-imageFileWidth: 1400;
+$time-glitch-bgSizeWidth: $time-glitch-imageFileWidth / 6;
+$time-glitch-steps: 7;
+$time-glitch-duration: 1.5s;
+$time-glitch-containerSize: $time-glitch-bgSizeWidth / $time-glitch-steps;
+
+.time-glitch {
+    height: 20vh;
+    width: #{$time-glitch-containerSize}vh;
+    opacity: .4;
+    background: url("../img/anim/timeglitch.png") 0 50% / #{$time-glitch-bgSizeWidth}vh auto no-repeat;
+    animation: time-glitchTitle $time-glitch-duration steps($time-glitch-steps) infinite;
+    position: relative;
+    &.timeover {
+        .number {
+            opacity: 0;
+        }
+        .title-timeover {
+            display: block;
+        }
+    }
+    .number {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        opacity: 1;
+        transition: .5s;
+        .m-number {
+            font-size: 50px;
+            font-weight: 500;
+            position: relative;
+            top: -5px;
+            min-width: 60px;
+            display: inline-block;
+            text-align: right;
+        }
+        .s-number {
+            font-size: 26px;
+            font-weight: 400;
+            min-width: 30px;
+        }
+        .dot {
+            font-size: 22px;
+            font-weight: bold;
+        }
+    }
+    .title-timeover {
+        display: none;
+        transition: .5s;
+    }
+}
+@keyframes time-glitchTitle {
+    100% {
+        background-position: -#{$time-glitch-bgSizeWidth}vh;
+    }
+}
+
+
+
+
+// TIMEOVER BG GLITCH
+$timeover-imageFileWidth: 2000;
+$timeover-bgSizeWidth: $timeover-imageFileWidth / 10;
+$timeover-steps: 7;
+$timeover-duration: 1.5s;
+$timeover-loopFrameCount: 2;
+$timeover-loopFrameDuration: $timeover-loopFrameCount * 0.25s;
+$timeover-loopStartPosition: $timeover-bgSizeWidth - ($timeover-bgSizeWidth / $timeover-steps * $timeover-loopFrameCount);
+$timeover-containerSize: $timeover-bgSizeWidth / $timeover-steps;
+
+.title-timeover {
+    position: absolute;
+    right: 0;
+    top: 2vh;
+    height: 14vh;
+    width: #{$timeover-containerSize}vh;
+    background: url("../img/anim/timeover.png") 0 50% / #{$timeover-bgSizeWidth}vh auto no-repeat;
+    animation: timeoverTitle $timeover-duration steps($timeover-steps) forwards, timeoverTitleLoop $timeover-loopFrameDuration $timeover-duration steps($timeover-loopFrameCount) infinite;
+}
+@keyframes timeoverTitle {
+    100% {
+        background-position: -#{$timeover-bgSizeWidth}vh;
+    }
+}
+@keyframes timeoverTitleLoop {
+    0% {
+        background-position: -#{$timeover-loopStartPosition}vh;
+    }
+    100% {
+        background-position: -#{$timeover-bgSizeWidth}vh;
+    }
+}
+

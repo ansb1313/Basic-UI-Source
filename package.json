@@ -1,0 +1,12 @@
+{
+  "name": "basicUi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/koo6357/Basic-UI-Source.git",
+  "author": "koo6357 <koo6357@naver.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1"
+  }
+}
